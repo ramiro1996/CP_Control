@@ -29,8 +29,10 @@ namespace CP_Control
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.MenuLateral = new System.Windows.Forms.Panel();
             this.PanelDashBoard = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.Btn_DashBoard = new System.Windows.Forms.Button();
             this.PanelMovimientos = new System.Windows.Forms.Panel();
             this.Btn_OtrosGastos = new System.Windows.Forms.Button();
@@ -51,12 +53,16 @@ namespace CP_Control
             this.Btn_Proyectos = new System.Windows.Forms.Button();
             this.Btn_Catalogos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.PanelFormHijos = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuLateral.SuspendLayout();
             this.PanelDashBoard.SuspendLayout();
             this.PanelMovimientos.SuspendLayout();
             this.PanelPresupuestos.SuspendLayout();
             this.PanelCatalogos.SuspendLayout();
+            this.PanelFormHijos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuLateral
@@ -75,7 +81,7 @@ namespace CP_Control
             this.MenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuLateral.Location = new System.Drawing.Point(0, 0);
             this.MenuLateral.Name = "MenuLateral";
-            this.MenuLateral.Size = new System.Drawing.Size(250, 877);
+            this.MenuLateral.Size = new System.Drawing.Size(250, 677);
             this.MenuLateral.TabIndex = 0;
             // 
             // PanelDashBoard
@@ -85,8 +91,23 @@ namespace CP_Control
             this.PanelDashBoard.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelDashBoard.Location = new System.Drawing.Point(0, 826);
             this.PanelDashBoard.Name = "PanelDashBoard";
-            this.PanelDashBoard.Size = new System.Drawing.Size(250, 50);
+            this.PanelDashBoard.Size = new System.Drawing.Size(216, 50);
             this.PanelDashBoard.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(216, 45);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Btn_DashBoard
             // 
@@ -95,7 +116,7 @@ namespace CP_Control
             this.Btn_DashBoard.Location = new System.Drawing.Point(0, 785);
             this.Btn_DashBoard.Name = "Btn_DashBoard";
             this.Btn_DashBoard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Btn_DashBoard.Size = new System.Drawing.Size(250, 41);
+            this.Btn_DashBoard.Size = new System.Drawing.Size(216, 41);
             this.Btn_DashBoard.TabIndex = 11;
             this.Btn_DashBoard.Text = "Dash Board";
             this.Btn_DashBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,7 +133,7 @@ namespace CP_Control
             this.PanelMovimientos.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelMovimientos.Location = new System.Drawing.Point(0, 605);
             this.PanelMovimientos.Name = "PanelMovimientos";
-            this.PanelMovimientos.Size = new System.Drawing.Size(250, 180);
+            this.PanelMovimientos.Size = new System.Drawing.Size(216, 180);
             this.PanelMovimientos.TabIndex = 7;
             // 
             // Btn_OtrosGastos
@@ -124,7 +145,7 @@ namespace CP_Control
             this.Btn_OtrosGastos.Location = new System.Drawing.Point(0, 135);
             this.Btn_OtrosGastos.Name = "Btn_OtrosGastos";
             this.Btn_OtrosGastos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Btn_OtrosGastos.Size = new System.Drawing.Size(250, 45);
+            this.Btn_OtrosGastos.Size = new System.Drawing.Size(216, 45);
             this.Btn_OtrosGastos.TabIndex = 3;
             this.Btn_OtrosGastos.Text = "Otros gastos";
             this.Btn_OtrosGastos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -140,7 +161,7 @@ namespace CP_Control
             this.Btn_Compras.Location = new System.Drawing.Point(0, 90);
             this.Btn_Compras.Name = "Btn_Compras";
             this.Btn_Compras.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Btn_Compras.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Compras.Size = new System.Drawing.Size(216, 45);
             this.Btn_Compras.TabIndex = 2;
             this.Btn_Compras.Text = "Compras";
             this.Btn_Compras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,7 +177,7 @@ namespace CP_Control
             this.Btn_Nomina.Location = new System.Drawing.Point(0, 45);
             this.Btn_Nomina.Name = "Btn_Nomina";
             this.Btn_Nomina.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Btn_Nomina.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Nomina.Size = new System.Drawing.Size(216, 45);
             this.Btn_Nomina.TabIndex = 1;
             this.Btn_Nomina.Text = "Nomina";
             this.Btn_Nomina.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,7 +193,7 @@ namespace CP_Control
             this.Btn_Cobros.Location = new System.Drawing.Point(0, 0);
             this.Btn_Cobros.Name = "Btn_Cobros";
             this.Btn_Cobros.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Btn_Cobros.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Cobros.Size = new System.Drawing.Size(216, 45);
             this.Btn_Cobros.TabIndex = 0;
             this.Btn_Cobros.Text = "Cobros";
             this.Btn_Cobros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,7 +207,7 @@ namespace CP_Control
             this.Btn_Movimientos.Location = new System.Drawing.Point(0, 564);
             this.Btn_Movimientos.Name = "Btn_Movimientos";
             this.Btn_Movimientos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Btn_Movimientos.Size = new System.Drawing.Size(250, 41);
+            this.Btn_Movimientos.Size = new System.Drawing.Size(216, 41);
             this.Btn_Movimientos.TabIndex = 8;
             this.Btn_Movimientos.Text = "Movimientos";
             this.Btn_Movimientos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -203,7 +224,7 @@ namespace CP_Control
             this.PanelPresupuestos.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelPresupuestos.Location = new System.Drawing.Point(0, 384);
             this.PanelPresupuestos.Name = "PanelPresupuestos";
-            this.PanelPresupuestos.Size = new System.Drawing.Size(250, 180);
+            this.PanelPresupuestos.Size = new System.Drawing.Size(216, 180);
             this.PanelPresupuestos.TabIndex = 5;
             // 
             // button10
@@ -215,7 +236,7 @@ namespace CP_Control
             this.button10.Location = new System.Drawing.Point(0, 135);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(250, 45);
+            this.button10.Size = new System.Drawing.Size(216, 45);
             this.button10.TabIndex = 3;
             this.button10.Text = "button10";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,7 +251,7 @@ namespace CP_Control
             this.button11.Location = new System.Drawing.Point(0, 90);
             this.button11.Name = "button11";
             this.button11.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(250, 45);
+            this.button11.Size = new System.Drawing.Size(216, 45);
             this.button11.TabIndex = 2;
             this.button11.Text = "button11";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -245,7 +266,7 @@ namespace CP_Control
             this.button12.Location = new System.Drawing.Point(0, 45);
             this.button12.Name = "button12";
             this.button12.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(250, 45);
+            this.button12.Size = new System.Drawing.Size(216, 45);
             this.button12.TabIndex = 1;
             this.button12.Text = "button12";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,7 +281,7 @@ namespace CP_Control
             this.button13.Location = new System.Drawing.Point(0, 0);
             this.button13.Name = "button13";
             this.button13.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(250, 45);
+            this.button13.Size = new System.Drawing.Size(216, 45);
             this.button13.TabIndex = 0;
             this.button13.Text = "Presupuestos";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,7 +295,7 @@ namespace CP_Control
             this.Btn_Presupuestos.Location = new System.Drawing.Point(0, 339);
             this.Btn_Presupuestos.Name = "Btn_Presupuestos";
             this.Btn_Presupuestos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Btn_Presupuestos.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Presupuestos.Size = new System.Drawing.Size(216, 45);
             this.Btn_Presupuestos.TabIndex = 6;
             this.Btn_Presupuestos.Text = "Presupuestos";
             this.Btn_Presupuestos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -291,7 +312,7 @@ namespace CP_Control
             this.PanelCatalogos.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelCatalogos.Location = new System.Drawing.Point(0, 147);
             this.PanelCatalogos.Name = "PanelCatalogos";
-            this.PanelCatalogos.Size = new System.Drawing.Size(250, 192);
+            this.PanelCatalogos.Size = new System.Drawing.Size(216, 192);
             this.PanelCatalogos.TabIndex = 1;
             // 
             // Btn_Materiales
@@ -303,7 +324,7 @@ namespace CP_Control
             this.Btn_Materiales.Location = new System.Drawing.Point(0, 135);
             this.Btn_Materiales.Name = "Btn_Materiales";
             this.Btn_Materiales.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Btn_Materiales.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Materiales.Size = new System.Drawing.Size(216, 45);
             this.Btn_Materiales.TabIndex = 3;
             this.Btn_Materiales.Text = "Materiales";
             this.Btn_Materiales.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -319,7 +340,7 @@ namespace CP_Control
             this.Btn_Trabajadores.Location = new System.Drawing.Point(0, 90);
             this.Btn_Trabajadores.Name = "Btn_Trabajadores";
             this.Btn_Trabajadores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Btn_Trabajadores.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Trabajadores.Size = new System.Drawing.Size(216, 45);
             this.Btn_Trabajadores.TabIndex = 2;
             this.Btn_Trabajadores.Text = "Trabajadores";
             this.Btn_Trabajadores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -335,7 +356,7 @@ namespace CP_Control
             this.Btn_Clientes.Location = new System.Drawing.Point(0, 45);
             this.Btn_Clientes.Name = "Btn_Clientes";
             this.Btn_Clientes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Btn_Clientes.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Clientes.Size = new System.Drawing.Size(216, 45);
             this.Btn_Clientes.TabIndex = 1;
             this.Btn_Clientes.Text = "Clientes";
             this.Btn_Clientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -351,7 +372,7 @@ namespace CP_Control
             this.Btn_Proyectos.Location = new System.Drawing.Point(0, 0);
             this.Btn_Proyectos.Name = "Btn_Proyectos";
             this.Btn_Proyectos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Btn_Proyectos.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Proyectos.Size = new System.Drawing.Size(216, 45);
             this.Btn_Proyectos.TabIndex = 0;
             this.Btn_Proyectos.Text = "Proyectos";
             this.Btn_Proyectos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -365,7 +386,7 @@ namespace CP_Control
             this.Btn_Catalogos.Location = new System.Drawing.Point(0, 102);
             this.Btn_Catalogos.Name = "Btn_Catalogos";
             this.Btn_Catalogos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Btn_Catalogos.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Catalogos.Size = new System.Drawing.Size(216, 45);
             this.Btn_Catalogos.TabIndex = 2;
             this.Btn_Catalogos.Text = "Catalogos";
             this.Btn_Catalogos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -377,34 +398,52 @@ namespace CP_Control
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 102);
+            this.panel1.Size = new System.Drawing.Size(216, 102);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // panel2
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(250, 45);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(250, 577);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(924, 100);
+            this.panel2.TabIndex = 1;
+            // 
+            // PanelFormHijos
+            // 
+            this.PanelFormHijos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
+            this.PanelFormHijos.Controls.Add(this.pictureBox1);
+            this.PanelFormHijos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelFormHijos.Location = new System.Drawing.Point(250, 0);
+            this.PanelFormHijos.Name = "PanelFormHijos";
+            this.PanelFormHijos.Size = new System.Drawing.Size(924, 577);
+            this.PanelFormHijos.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(361, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(216, 233);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1674, 877);
+            this.ClientSize = new System.Drawing.Size(1174, 677);
+            this.Controls.Add(this.PanelFormHijos);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.MenuLateral);
             this.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carpitectura Control";
             this.MenuLateral.ResumeLayout(false);
             this.MenuLateral.PerformLayout();
@@ -412,6 +451,9 @@ namespace CP_Control
             this.PanelMovimientos.ResumeLayout(false);
             this.PanelPresupuestos.ResumeLayout(false);
             this.PanelCatalogos.ResumeLayout(false);
+            this.PanelFormHijos.ResumeLayout(false);
+            this.PanelFormHijos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -441,6 +483,9 @@ namespace CP_Control
         private System.Windows.Forms.Panel PanelDashBoard;
         private System.Windows.Forms.Button Btn_DashBoard;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelFormHijos;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

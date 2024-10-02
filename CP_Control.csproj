@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CP_Control\Proyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Control\Proyectos.Designer.cs">
+      <DependentUpon>Proyectos.cs</DependentUpon>
+    </Compile>
     <Compile Include="CP_Control\ManejadorBDSQL.cs" />
     <Compile Include="CP_Control\ManejadorBaseDatos.cs" />
     <Compile Include="CP_Control\Login.cs">
@@ -62,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CP_Control\Proyectos.resx">
+      <DependentUpon>Proyectos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CP_Control\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

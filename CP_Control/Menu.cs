@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CP_Control.CP_Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,6 +67,7 @@ namespace CP_Control
         private void Btn_Proyectos_Click(object sender, EventArgs e)
         {
             //Código...
+            PanelHijos(new Proyectos());
             hideSubMenu();
         }
 
@@ -128,10 +130,34 @@ namespace CP_Control
         }
 
         #endregion
-
+        #region Dashboard
         private void Btn_DashBoard_Click(object sender, EventArgs e)
         {
             showSubMenu(PanelDashBoard);
         }
+        #endregion
+
+        #region Formulrio activo
+
+        private Form formularioActivo = null;
+        
+        private void PanelHijos(Form factivo)
+        {
+            if (formularioActivo != null)
+            
+                formularioActivo.Close();
+                formularioActivo = factivo;
+                factivo.TopLevel = false;
+                factivo.FormBorderStyle = FormBorderStyle.None;
+                factivo.Dock = DockStyle.Fill;
+                PanelFormHijos.Controls.Add(factivo);
+                PanelFormHijos.Tag = factivo;
+                factivo.BringToFront();
+                factivo.Show();
+
+            
+
+        }
+        #endregion
     }
 }
