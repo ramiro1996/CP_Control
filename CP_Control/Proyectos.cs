@@ -23,9 +23,15 @@ namespace CP_Control.CP_Control
             this.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DGV_Proyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Btn_NuevoProyecto_Click(object sender, EventArgs e)
+        {
+            Form NuevoProyecto = new NuevoProyecto();
+            NuevoProyecto.Show();
         }
     }
 }

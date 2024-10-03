@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CP_Control\NuevoProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Control\NuevoProyecto.Designer.cs">
+      <DependentUpon>NuevoProyecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="CP_Control\Proyectos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CP_Control\NuevoProyecto.resx">
+      <DependentUpon>NuevoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CP_Control\Proyectos.resx">
       <DependentUpon>Proyectos.cs</DependentUpon>
     </EmbeddedResource>
