@@ -17,6 +17,9 @@ namespace CP_Control.CP_Control
             InitializeComponent();
         }
 
-        
+        private void Btn_GuardarProyecto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

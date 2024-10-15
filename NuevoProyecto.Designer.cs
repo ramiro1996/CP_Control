@@ -112,6 +112,7 @@
             this.Btn_GuardarProyecto.TabIndex = 9;
             this.Btn_GuardarProyecto.Text = "Guardar";
             this.Btn_GuardarProyecto.UseVisualStyleBackColor = true;
+            this.Btn_GuardarProyecto.Click += new System.EventHandler(this.Btn_GuardarProyecto_Click);
             // 
             // NuevoProyecto
             // 

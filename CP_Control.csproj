@@ -46,44 +46,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CP_Control\NuevoProyecto.cs">
+    <Compile Include="ConectaBD.cs" />
+    <Compile Include="Interfaces\IConsultasRepositorioAsync.cs" />
+    <Compile Include="Interfaces\IRepositorioConsultas.cs" />
+    <Compile Include="NuevoProyecto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CP_Control\NuevoProyecto.Designer.cs">
+    <Compile Include="NuevoProyecto.Designer.cs">
       <DependentUpon>NuevoProyecto.cs</DependentUpon>
     </Compile>
-    <Compile Include="CP_Control\Proyectos.cs">
+    <Compile Include="Proyectos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CP_Control\Proyectos.Designer.cs">
+    <Compile Include="Proyectos.Designer.cs">
       <DependentUpon>Proyectos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CP_Control\ManejadorBDSQL.cs" />
-    <Compile Include="CP_Control\ManejadorBaseDatos.cs" />
-    <Compile Include="CP_Control\Login.cs">
+    <Compile Include="ManejadorBDSQL.cs" />
+    <Compile Include="ManejadorBaseDatos.cs" />
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CP_Control\Login.Designer.cs">
+    <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="CP_Control\Menu.cs">
+    <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CP_Control\Menu.Designer.cs">
+    <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositorio\RepositorioCatalogos1.cs" />
+    <Compile Include="Repositorio\RepositorioConsultas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CP_Control\NuevoProyecto.resx">
+    <EmbeddedResource Include="NuevoProyecto.resx">
       <DependentUpon>NuevoProyecto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CP_Control\Proyectos.resx">
+    <EmbeddedResource Include="Proyectos.resx">
       <DependentUpon>Proyectos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CP_Control\Login.resx">
+    <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CP_Control\Menu.resx">
+    <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modelos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
