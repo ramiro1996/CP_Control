@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConectaBD.cs" />
+    <Compile Include="Consultas.cs" />
     <Compile Include="Interfaces\IConsultasRepositorioAsync.cs" />
     <Compile Include="Interfaces\IRepositorioConsultas.cs" />
     <Compile Include="NuevoProyecto.cs">

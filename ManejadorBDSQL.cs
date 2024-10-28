@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CP_Control.CP_Control
 {
@@ -47,6 +48,26 @@ namespace CP_Control.CP_Control
             sqlconex.Open();
             sqlcom.ExecuteNonQuery();
             sqlconex.Close();
+        }
+        public override int InsertaRegC(string consulta)
+        {
+            int filasAfectadas;
+                try
+            {
+                sqlcom = new SqlCommand(consulta, sqlconex);
+                sqlconex.Open();
+
+                filasAfectadas = sqlcom.ExecuteNonQuery();
+                sqlconex.Close();
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show("Error de conexión"+e.Message);
+                sqlconex.Close() ;  
+                filasAfectadas = -1;
+            }
+            return filasAfectadas;
         }
     }
 }

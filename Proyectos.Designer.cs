@@ -33,10 +33,12 @@
             this.DGV_Proyectos = new System.Windows.Forms.DataGridView();
             this.Proyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Finicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Proyectos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,10 +72,12 @@
             this.DGV_Proyectos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Proyecto,
             this.Codigo,
-            this.Cliente,
+            this.Id_Cliente,
             this.Direccion,
-            this.Finicio,
-            this.FEntrega});
+            this.FInicio,
+            this.FEntrega,
+            this.Estado,
+            this.FRegistro});
             this.DGV_Proyectos.Location = new System.Drawing.Point(48, 117);
             this.DGV_Proyectos.Name = "DGV_Proyectos";
             this.DGV_Proyectos.RowHeadersWidth = 82;
@@ -91,31 +95,31 @@
             // 
             // Codigo
             // 
-            this.Codigo.HeaderText = "Código";
+            this.Codigo.HeaderText = "Codigo";
             this.Codigo.MinimumWidth = 10;
             this.Codigo.Name = "Codigo";
             this.Codigo.Width = 200;
             // 
-            // Cliente
+            // Id_Cliente
             // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.MinimumWidth = 10;
-            this.Cliente.Name = "Cliente";
-            this.Cliente.Width = 200;
+            this.Id_Cliente.HeaderText = "Cliente";
+            this.Id_Cliente.MinimumWidth = 10;
+            this.Id_Cliente.Name = "Id_Cliente";
+            this.Id_Cliente.Width = 200;
             // 
             // Direccion
             // 
-            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.HeaderText = "Dirección";
             this.Direccion.MinimumWidth = 10;
             this.Direccion.Name = "Direccion";
             this.Direccion.Width = 200;
             // 
-            // Finicio
+            // FInicio
             // 
-            this.Finicio.HeaderText = "Fecha inicio";
-            this.Finicio.MinimumWidth = 10;
-            this.Finicio.Name = "Finicio";
-            this.Finicio.Width = 200;
+            this.FInicio.HeaderText = "Fecha Inicio";
+            this.FInicio.MinimumWidth = 10;
+            this.FInicio.Name = "FInicio";
+            this.FInicio.Width = 200;
             // 
             // FEntrega
             // 
@@ -123,6 +127,20 @@
             this.FEntrega.MinimumWidth = 10;
             this.FEntrega.Name = "FEntrega";
             this.FEntrega.Width = 200;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 10;
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 200;
+            // 
+            // FRegistro
+            // 
+            this.FRegistro.HeaderText = "Fecha registro";
+            this.FRegistro.MinimumWidth = 10;
+            this.FRegistro.Name = "FRegistro";
+            this.FRegistro.Width = 200;
             // 
             // Proyectos
             // 
@@ -147,9 +165,11 @@
         private System.Windows.Forms.DataGridView DGV_Proyectos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proyecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Finicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn FEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FRegistro;
     }
 }

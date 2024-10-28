@@ -11,5 +11,6 @@ namespace CP_Control.CP_Control
         public abstract System.Data.DataSet ConsultarTablaBD(string consulta);
         public abstract object ConsultaEscalarBD(string consulta);
         public abstract void InsertaModificaBD(string consulta);
+        public abstract int InsertaRegC(string consulta);
     }
 }
