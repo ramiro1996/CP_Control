@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.G_Clientes = new System.Windows.Forms.DataGridView();
-            this.Btn_Clientes = new System.Windows.Forms.Button();
-            this.Btn_CerrarClientes = new System.Windows.Forms.Button();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RFC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +36,8 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_Clientes = new System.Windows.Forms.Button();
+            this.Btn_CerrarClientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.G_Clientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,26 +61,6 @@
             this.G_Clientes.RowTemplate.Height = 33;
             this.G_Clientes.Size = new System.Drawing.Size(1047, 560);
             this.G_Clientes.TabIndex = 0;
-            // 
-            // Btn_Clientes
-            // 
-            this.Btn_Clientes.Location = new System.Drawing.Point(48, 41);
-            this.Btn_Clientes.Name = "Btn_Clientes";
-            this.Btn_Clientes.Size = new System.Drawing.Size(220, 49);
-            this.Btn_Clientes.TabIndex = 1;
-            this.Btn_Clientes.Text = "Nuevo cliente";
-            this.Btn_Clientes.UseVisualStyleBackColor = true;
-            // 
-            // Btn_CerrarClientes
-            // 
-            this.Btn_CerrarClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_CerrarClientes.Location = new System.Drawing.Point(844, 701);
-            this.Btn_CerrarClientes.Name = "Btn_CerrarClientes";
-            this.Btn_CerrarClientes.Size = new System.Drawing.Size(169, 46);
-            this.Btn_CerrarClientes.TabIndex = 2;
-            this.Btn_CerrarClientes.Text = "Cerrar";
-            this.Btn_CerrarClientes.UseVisualStyleBackColor = true;
-            this.Btn_CerrarClientes.Click += new System.EventHandler(this.Btn_CerrarClientes_Click);
             // 
             // IdCliente
             // 
@@ -130,6 +110,27 @@
             this.Correo.MinimumWidth = 10;
             this.Correo.Name = "Correo";
             this.Correo.Width = 200;
+            // 
+            // Btn_Clientes
+            // 
+            this.Btn_Clientes.Location = new System.Drawing.Point(48, 41);
+            this.Btn_Clientes.Name = "Btn_Clientes";
+            this.Btn_Clientes.Size = new System.Drawing.Size(220, 49);
+            this.Btn_Clientes.TabIndex = 1;
+            this.Btn_Clientes.Text = "Nuevo cliente";
+            this.Btn_Clientes.UseVisualStyleBackColor = true;
+            this.Btn_Clientes.Click += new System.EventHandler(this.Btn_Clientes_Click);
+            // 
+            // Btn_CerrarClientes
+            // 
+            this.Btn_CerrarClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_CerrarClientes.Location = new System.Drawing.Point(844, 701);
+            this.Btn_CerrarClientes.Name = "Btn_CerrarClientes";
+            this.Btn_CerrarClientes.Size = new System.Drawing.Size(169, 46);
+            this.Btn_CerrarClientes.TabIndex = 2;
+            this.Btn_CerrarClientes.Text = "Cerrar";
+            this.Btn_CerrarClientes.UseVisualStyleBackColor = true;
+            this.Btn_CerrarClientes.Click += new System.EventHandler(this.Btn_CerrarClientes_Click);
             // 
             // Clientes
             // 

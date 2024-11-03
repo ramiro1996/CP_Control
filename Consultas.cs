@@ -41,6 +41,12 @@ namespace CP_Control
             string consulta = "EXEC CP_Clientes_ConsultaClientes";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
+
+        public void Set_InsertaCliente(string cliente, string RFC, string direccion, string ciudad, string cp, string correo, string contacto, string telContacto) 
+        {
+            string consulta = "EXEC CP_Clientes_InsertaClientes @CP_IdCliente = 0, @CP_Nombre ='"+cliente+"', @CP_RFC='"+RFC+"',@CP_Direccion='"+direccion+"' ,@CP_Ciudad ='"+ciudad+"', @CP_CP ='"+cp+"', @CP_Nombre_contacto ='"+contacto+"',@CP_Correo ='"+correo+"', @CP_IdRegistro =1, @CP_TelContacto ='"+telContacto+"'";
+            MBD.InsertaModificaBD(consulta);
+        }
         #endregion
     }
 }

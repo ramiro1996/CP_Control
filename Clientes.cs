@@ -45,5 +45,14 @@ namespace CP_Control
         {
             this.Close();
         }
+
+        private void Btn_Clientes_Click(object sender, EventArgs e)
+        {
+            var nuevoClienteForm = new NuevoCliente();
+
+            nuevoClienteForm.ClienteNuevo += (s, args) => Get_Clientes();
+            
+            nuevoClienteForm.Show();
+        }
     }
 }

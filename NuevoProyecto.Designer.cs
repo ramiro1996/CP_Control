@@ -106,7 +106,7 @@
             // 
             // Btn_GuardarProyecto
             // 
-            this.Btn_GuardarProyecto.Location = new System.Drawing.Point(558, 195);
+            this.Btn_GuardarProyecto.Location = new System.Drawing.Point(991, 210);
             this.Btn_GuardarProyecto.Name = "Btn_GuardarProyecto";
             this.Btn_GuardarProyecto.Size = new System.Drawing.Size(150, 39);
             this.Btn_GuardarProyecto.TabIndex = 9;

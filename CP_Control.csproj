@@ -48,14 +48,20 @@
   <ItemGroup>
     <Compile Include="ConectaBD.cs" />
     <Compile Include="Consultas.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IConsultasRepositorioAsync.cs" />
     <Compile Include="Interfaces\IRepositorioConsultas.cs" />
+    <Compile Include="NuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoCliente.Designer.cs">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevoProyecto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,8 +92,11 @@
     <Compile Include="Repositorio\RepositorioConsultas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoCliente.resx">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoProyecto.resx">
       <DependentUpon>NuevoProyecto.cs</DependentUpon>
