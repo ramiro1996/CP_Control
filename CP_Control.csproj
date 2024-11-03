@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="ConectaBD.cs" />
     <Compile Include="Consultas.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IConsultasRepositorioAsync.cs" />
     <Compile Include="Interfaces\IRepositorioConsultas.cs" />
     <Compile Include="NuevoProyecto.cs">
@@ -80,6 +86,9 @@
     <Compile Include="Repositorio\RepositorioConsultas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoProyecto.resx">
       <DependentUpon>NuevoProyecto.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +109,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modelos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\CarpitecturaPizana.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

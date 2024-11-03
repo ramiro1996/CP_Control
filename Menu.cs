@@ -74,6 +74,7 @@ namespace CP_Control
         private void Btn_Clientes_Click(object sender, EventArgs e)
         {
             //Código...
+            PanelHijos(new Clientes());
             hideSubMenu();
         }
 

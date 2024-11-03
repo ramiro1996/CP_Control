@@ -34,5 +34,13 @@ namespace CP_Control
              MBD.InsertaModificaBD(consulta);
         }
         #endregion
+
+        #region Clientes
+        public DataTable Consulta_Clientes()
+        {
+            string consulta = "EXEC CP_Clientes_ConsultaClientes";
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
+        #endregion
     }
 }
