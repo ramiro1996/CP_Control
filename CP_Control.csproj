@@ -54,6 +54,18 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevoTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoTrabajador.Designer.cs">
+      <DependentUpon>NuevoTrabajador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trabajadores.Designer.cs">
+      <DependentUpon>Trabajadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IConsultasRepositorioAsync.cs" />
     <Compile Include="Interfaces\IRepositorioConsultas.cs" />
     <Compile Include="NuevoCliente.cs">
@@ -101,6 +113,9 @@
     <EmbeddedResource Include="NuevoProyecto.resx">
       <DependentUpon>NuevoProyecto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NuevoTrabajador.resx">
+      <DependentUpon>NuevoTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proyectos.resx">
       <DependentUpon>Proyectos.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +135,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Trabajadores.resx">
+      <DependentUpon>Trabajadores.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -134,6 +152,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Imagenes\Icons\" />
     <Folder Include="Modelos\" />
   </ItemGroup>
   <ItemGroup>

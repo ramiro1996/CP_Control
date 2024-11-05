@@ -48,5 +48,26 @@ namespace CP_Control
             MBD.InsertaModificaBD(consulta);
         }
         #endregion
+
+        #region Trabajadores
+        public DataTable Consulta_Trabajadores()
+        {
+            string consulta = "EXEC CP_Usuarios_ConsultaUsuarios";
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
+        public DataTable Get_Puesto() 
+        {
+            string consulta = "SELECT ID, Area FROM CP_Grupo";
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
+        public DataTable Get_Nivel()
+        {
+            string consulta = "SELECT ID, Nivel FROM CP_Nivel";
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
+        public void Set_InsertaTrabajador(string Trabajador, string Ap_Paterno, string Ap_Materno, int puesto, int nivel)
+        {
+        }
+        #endregion
     }
 }

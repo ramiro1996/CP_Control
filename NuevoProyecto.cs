@@ -62,6 +62,9 @@ namespace CP_Control.CP_Control
             }
         }
 
-       
+        private void NuevoProyecto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace CP_Control
             }
             if (PanelPresupuestos.Visible == true)
             {
-                PanelPresupuestos.Visible = true;
+                PanelPresupuestos.Visible = false;
             }
             if (PanelMovimientos.Visible == true)
             {
@@ -81,6 +81,7 @@ namespace CP_Control
         private void Btn_Trabajadores_Click(object sender, EventArgs e)
         {
             //Código...
+            PanelHijos(new Trabajadores());
             hideSubMenu();
         }
 
