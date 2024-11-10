@@ -29,6 +29,7 @@ namespace CP_Control.CP_Control
             DGV_Proyectos.AutoGenerateColumns = false;
 
             // Asigna los DataPropertyName a las columnas antes de asignar el DataSource
+            DGV_Proyectos.Columns["Id"].DataPropertyName = "ID";
             DGV_Proyectos.Columns["Proyecto"].DataPropertyName = "Proyecto";
             DGV_Proyectos.Columns["Codigo"].DataPropertyName = "Codigo";
             DGV_Proyectos.Columns["Id_Cliente"].DataPropertyName = "Id_Cliente";

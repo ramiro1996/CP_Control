@@ -65,9 +65,35 @@ namespace CP_Control
             string consulta = "SELECT ID, Nivel FROM CP_Nivel";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
-        public void Set_InsertaTrabajador(string Trabajador, string Ap_Paterno, string Ap_Materno, int puesto, int nivel)
+        public void Set_InsertaTrabajador(string Trabajador, string Ap_Paterno, string Ap_Materno, int puesto, int nivel, string usr,string pass, int tel, string direccion, string correo, decimal sueldo)
         {
+            string consulta = "EXEC CP_Usuarios_UsuariosInserta @LC_Nombre = '"+Trabajador+"', @LC_Ap_Paterno ='"+Ap_Paterno+"', @LC_Ap_Materno ='"+Ap_Materno+"', @LC_Puesto ="+puesto+", @LC_Nivel ="+nivel+", @LC_Usuario ='"+usr+"', @LC_Password   ='"+pass+"', @LC_Telefono   ="+tel+",@LC_Direccion  ='"+direccion+"', @LC_Correo = '"+correo+"', @LC_Sueldo ="+sueldo+",@Lc_IdUsuariO  = 0  ";
+             MBD.InsertaModificaBD(consulta);
         }
+        #endregion
+
+        #region Productos
+        public DataTable Get_Productos()
+        {
+            string consulta = "EXEC CP_Productos_ConsultaProyectos";
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
+        public DataTable Get_UnidadMedida() 
+        {
+            string consulta = "EXEC CP_Unidad_ConsultaUnidadMedida";
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
+        public DataTable Get_Proveedor()
+        {
+            string consulta = "EXEC CP_Proveedor_ConsultaProveedor";
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
+        public DataTable Get_Clasificacion() 
+        {
+            string consulta = "EXEC CP_Clasificacion_ConsultaClasificacion";
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
+        
         #endregion
     }
 }

@@ -88,6 +88,7 @@ namespace CP_Control
         private void Btn_Materiales_Click(object sender, EventArgs e)
         {
             //Código...
+            PanelHijos(new Materiales());
             hideSubMenu();
         }
         #endregion

@@ -31,6 +31,7 @@
             this.Btn_Cerrar = new System.Windows.Forms.Button();
             this.Btn_NuevoProyecto = new System.Windows.Forms.Button();
             this.DGV_Proyectos = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +71,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_Proyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Proyectos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Proyecto,
             this.Codigo,
             this.Id_Cliente,
@@ -85,6 +87,13 @@
             this.DGV_Proyectos.Size = new System.Drawing.Size(1047, 560);
             this.DGV_Proyectos.TabIndex = 3;
             this.DGV_Proyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Proyectos_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 10;
+            this.Id.Name = "Id";
+            this.Id.Width = 200;
             // 
             // Proyecto
             // 
@@ -163,6 +172,7 @@
         private System.Windows.Forms.Button Btn_Cerrar;
         private System.Windows.Forms.Button Btn_NuevoProyecto;
         private System.Windows.Forms.DataGridView DGV_Proyectos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proyecto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Cliente;

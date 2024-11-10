@@ -54,16 +54,17 @@ namespace CP_Control
             decimal sueldo = Convert.ToDecimal(Txt_SueldoT.Text.Trim());
             string usuario = Txt_UsuarioT.Text.Trim();
             string passUsr = Txt_PassT.Text.Trim();
-            string tel =Txt_TelT.Text.Trim();
+            int tel = Convert.ToInt32(Txt_TelT.Text.Trim());
             string direccion = Txt_DireccionT.Text.Trim();
             string correo = Txt_CorreoT.Text.Trim();
             
             if (nombreT != "" || apePat !="") 
             {
-                
-                
-            
+                Cta.Set_InsertaTrabajador(nombreT,apePat,apeMat,puesto,nivel,usuario,passUsr,tel,direccion,correo,sueldo);    
+                TrabajadorInsertado?.Invoke(sender, EventArgs.Empty);
+                this.Close();
             }
+
 
         }
     }
