@@ -55,8 +55,8 @@ namespace CP_Control
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PanelFormHijos = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Btn_Proveedores = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuLateral.SuspendLayout();
             this.PanelDashBoard.SuspendLayout();
             this.PanelMovimientos.SuspendLayout();
@@ -351,6 +351,7 @@ namespace CP_Control
             // 
             // Btn_Clientes
             // 
+            this.Btn_Clientes.Cursor = System.Windows.Forms.Cursors.Default;
             this.Btn_Clientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_Clientes.FlatAppearance.BorderSize = 0;
             this.Btn_Clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -367,6 +368,7 @@ namespace CP_Control
             // 
             // Btn_Proyectos
             // 
+            this.Btn_Proyectos.Cursor = System.Windows.Forms.Cursors.Default;
             this.Btn_Proyectos.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_Proyectos.FlatAppearance.BorderSize = 0;
             this.Btn_Proyectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -384,6 +386,7 @@ namespace CP_Control
             // Btn_Catalogos
             // 
             this.Btn_Catalogos.AutoSize = true;
+            this.Btn_Catalogos.Cursor = System.Windows.Forms.Cursors.Default;
             this.Btn_Catalogos.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btn_Catalogos.Location = new System.Drawing.Point(0, 102);
             this.Btn_Catalogos.Name = "Btn_Catalogos";
@@ -416,11 +419,28 @@ namespace CP_Control
             // 
             this.PanelFormHijos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
             this.PanelFormHijos.Controls.Add(this.pictureBox1);
+            this.PanelFormHijos.Cursor = System.Windows.Forms.Cursors.Default;
             this.PanelFormHijos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelFormHijos.Location = new System.Drawing.Point(250, 0);
             this.PanelFormHijos.Name = "PanelFormHijos";
             this.PanelFormHijos.Size = new System.Drawing.Size(1133, 906);
             this.PanelFormHijos.TabIndex = 2;
+            // 
+            // Btn_Proveedores
+            // 
+            this.Btn_Proveedores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Proveedores.FlatAppearance.BorderSize = 0;
+            this.Btn_Proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Proveedores.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Proveedores.Location = new System.Drawing.Point(0, 180);
+            this.Btn_Proveedores.Name = "Btn_Proveedores";
+            this.Btn_Proveedores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.Btn_Proveedores.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Proveedores.TabIndex = 3;
+            this.Btn_Proveedores.Text = "Proveedores";
+            this.Btn_Proveedores.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.Btn_Proveedores.UseVisualStyleBackColor = true;
+            this.Btn_Proveedores.Click += new System.EventHandler(this.Btn_Proveedores_Click);
             // 
             // pictureBox1
             // 
@@ -432,20 +452,6 @@ namespace CP_Control
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // Btn_Proveedores
-            // 
-            this.Btn_Proveedores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_Proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Proveedores.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Btn_Proveedores.Location = new System.Drawing.Point(0, 180);
-            this.Btn_Proveedores.Name = "Btn_Proveedores";
-            this.Btn_Proveedores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Btn_Proveedores.Size = new System.Drawing.Size(250, 45);
-            this.Btn_Proveedores.TabIndex = 3;
-            this.Btn_Proveedores.Text = "Proveedores";
-            this.Btn_Proveedores.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Btn_Proveedores.UseVisualStyleBackColor = true;
             // 
             // Menu
             // 

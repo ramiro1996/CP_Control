@@ -91,6 +91,13 @@ namespace CP_Control
             PanelHijos(new Materiales());
             hideSubMenu();
         }
+        private void Btn_Proveedores_Click(object sender, EventArgs e)
+        {
+            //Código
+            PanelHijos(new Proveedores());
+            hideSubMenu();
+
+        }
         #endregion
         #region Presupuestos
         private void Btn_Presupuestos_Click(object sender, EventArgs e)
@@ -162,5 +169,6 @@ namespace CP_Control
 
         }
         #endregion
+
     }
 }

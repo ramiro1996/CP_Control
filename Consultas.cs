@@ -99,7 +99,14 @@ namespace CP_Control
             string consulta = "EXEC CP_Producto_ProductoInserta @CP_Articulo ='"+model.Descripcion+"', @CP_Espesor = '"+model.Unidad+"', @CP_Color ='"+model.Color+"', @CP_Clasificacion ='"+model.Clasificacion+"', @CP_UM = '"+model.Unidad+"',@CP_Costo ="+model.Costo+", @CP_IdProveedor = "+model.IdProveedor+", @CP_Codigo = '"+model.Codigo+"'";
             MBD.InsertaModificaBD(consulta);
         }
-        
+
+        #endregion
+        #region Proveedores
+        public DataTable Get_Proveedores() 
+        {
+            string consulta = "CP_Proveedor_ConsultaProveedor";
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
         #endregion
     }
 }

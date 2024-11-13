@@ -67,11 +67,23 @@
     <Compile Include="NuevoMaterial.Designer.cs">
       <DependentUpon>NuevoMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoProveedor.Designer.cs">
+      <DependentUpon>NuevoProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevoTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NuevoTrabajador.Designer.cs">
       <DependentUpon>NuevoTrabajador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Trabajadores.cs">
       <SubType>Form</SubType>
@@ -129,11 +141,17 @@
     <EmbeddedResource Include="NuevoMaterial.resx">
       <DependentUpon>NuevoMaterial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NuevoProveedor.resx">
+      <DependentUpon>NuevoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoProyecto.resx">
       <DependentUpon>NuevoProyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoTrabajador.resx">
       <DependentUpon>NuevoTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyectos.resx">
       <DependentUpon>Proyectos.cs</DependentUpon>
