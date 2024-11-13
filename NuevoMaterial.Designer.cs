@@ -180,6 +180,7 @@
             // 
             // Btn_GuardarM
             // 
+            this.Btn_GuardarM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_GuardarM.Location = new System.Drawing.Point(664, 237);
             this.Btn_GuardarM.Name = "Btn_GuardarM";
             this.Btn_GuardarM.Size = new System.Drawing.Size(181, 46);

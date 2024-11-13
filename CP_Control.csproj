@@ -60,6 +60,7 @@
     <Compile Include="Materiales.Designer.cs">
       <DependentUpon>Materiales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\CatalogosViewModel.cs" />
     <Compile Include="NuevoMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,7 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagenes\Icons\" />
-    <Folder Include="Modelos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagenes\CarpitecturaPizana.jpeg" />

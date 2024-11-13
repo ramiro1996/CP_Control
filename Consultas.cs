@@ -1,4 +1,5 @@
 ﻿using CP_Control.CP_Control;
+using CP_Control.CP_Control.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -92,6 +93,11 @@ namespace CP_Control
         {
             string consulta = "EXEC CP_Clasificacion_ConsultaClasificacion";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
+        }
+        public void Set_InsertaMaterial(ProductosViewModel model) 
+        {
+            string consulta = "EXEC CP_Producto_ProductoInserta @CP_Articulo ='"+model.Descripcion+"', @CP_Espesor = '"+model.Unidad+"', @CP_Color ='"+model.Color+"', @CP_Clasificacion ='"+model.Clasificacion+"', @CP_UM = '"+model.Unidad+"',@CP_Costo ="+model.Costo+", @CP_IdProveedor = "+model.IdProveedor+", @CP_Codigo = '"+model.Codigo+"'";
+            MBD.InsertaModificaBD(consulta);
         }
         
         #endregion

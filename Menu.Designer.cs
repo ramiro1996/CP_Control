@@ -56,6 +56,7 @@ namespace CP_Control
             this.panel2 = new System.Windows.Forms.Panel();
             this.PanelFormHijos = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Btn_Proveedores = new System.Windows.Forms.Button();
             this.MenuLateral.SuspendLayout();
             this.PanelDashBoard.SuspendLayout();
             this.PanelMovimientos.SuspendLayout();
@@ -81,7 +82,7 @@ namespace CP_Control
             this.MenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuLateral.Location = new System.Drawing.Point(0, 0);
             this.MenuLateral.Name = "MenuLateral";
-            this.MenuLateral.Size = new System.Drawing.Size(250, 908);
+            this.MenuLateral.Size = new System.Drawing.Size(250, 1006);
             this.MenuLateral.TabIndex = 0;
             // 
             // PanelDashBoard
@@ -89,7 +90,7 @@ namespace CP_Control
             this.PanelDashBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
             this.PanelDashBoard.Controls.Add(this.button1);
             this.PanelDashBoard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelDashBoard.Location = new System.Drawing.Point(0, 826);
+            this.PanelDashBoard.Location = new System.Drawing.Point(0, 864);
             this.PanelDashBoard.Name = "PanelDashBoard";
             this.PanelDashBoard.Size = new System.Drawing.Size(250, 50);
             this.PanelDashBoard.TabIndex = 10;
@@ -113,7 +114,7 @@ namespace CP_Control
             // 
             this.Btn_DashBoard.AutoSize = true;
             this.Btn_DashBoard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_DashBoard.Location = new System.Drawing.Point(0, 785);
+            this.Btn_DashBoard.Location = new System.Drawing.Point(0, 823);
             this.Btn_DashBoard.Name = "Btn_DashBoard";
             this.Btn_DashBoard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Btn_DashBoard.Size = new System.Drawing.Size(250, 41);
@@ -131,7 +132,7 @@ namespace CP_Control
             this.PanelMovimientos.Controls.Add(this.Btn_Nomina);
             this.PanelMovimientos.Controls.Add(this.Btn_Cobros);
             this.PanelMovimientos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelMovimientos.Location = new System.Drawing.Point(0, 605);
+            this.PanelMovimientos.Location = new System.Drawing.Point(0, 643);
             this.PanelMovimientos.Name = "PanelMovimientos";
             this.PanelMovimientos.Size = new System.Drawing.Size(250, 180);
             this.PanelMovimientos.TabIndex = 7;
@@ -204,7 +205,7 @@ namespace CP_Control
             // 
             this.Btn_Movimientos.AutoSize = true;
             this.Btn_Movimientos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_Movimientos.Location = new System.Drawing.Point(0, 564);
+            this.Btn_Movimientos.Location = new System.Drawing.Point(0, 602);
             this.Btn_Movimientos.Name = "Btn_Movimientos";
             this.Btn_Movimientos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Btn_Movimientos.Size = new System.Drawing.Size(250, 41);
@@ -222,7 +223,7 @@ namespace CP_Control
             this.PanelPresupuestos.Controls.Add(this.button12);
             this.PanelPresupuestos.Controls.Add(this.button13);
             this.PanelPresupuestos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelPresupuestos.Location = new System.Drawing.Point(0, 384);
+            this.PanelPresupuestos.Location = new System.Drawing.Point(0, 422);
             this.PanelPresupuestos.Name = "PanelPresupuestos";
             this.PanelPresupuestos.Size = new System.Drawing.Size(250, 180);
             this.PanelPresupuestos.TabIndex = 5;
@@ -292,7 +293,7 @@ namespace CP_Control
             // 
             this.Btn_Presupuestos.AutoSize = true;
             this.Btn_Presupuestos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btn_Presupuestos.Location = new System.Drawing.Point(0, 339);
+            this.Btn_Presupuestos.Location = new System.Drawing.Point(0, 377);
             this.Btn_Presupuestos.Name = "Btn_Presupuestos";
             this.Btn_Presupuestos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Btn_Presupuestos.Size = new System.Drawing.Size(250, 45);
@@ -305,6 +306,7 @@ namespace CP_Control
             // PanelCatalogos
             // 
             this.PanelCatalogos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
+            this.PanelCatalogos.Controls.Add(this.Btn_Proveedores);
             this.PanelCatalogos.Controls.Add(this.Btn_Materiales);
             this.PanelCatalogos.Controls.Add(this.Btn_Trabajadores);
             this.PanelCatalogos.Controls.Add(this.Btn_Clientes);
@@ -312,7 +314,7 @@ namespace CP_Control
             this.PanelCatalogos.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelCatalogos.Location = new System.Drawing.Point(0, 147);
             this.PanelCatalogos.Name = "PanelCatalogos";
-            this.PanelCatalogos.Size = new System.Drawing.Size(250, 192);
+            this.PanelCatalogos.Size = new System.Drawing.Size(250, 230);
             this.PanelCatalogos.TabIndex = 1;
             // 
             // Btn_Materiales
@@ -405,7 +407,7 @@ namespace CP_Control
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(28)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(250, 808);
+            this.panel2.Location = new System.Drawing.Point(250, 906);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1133, 100);
             this.panel2.TabIndex = 1;
@@ -417,25 +419,39 @@ namespace CP_Control
             this.PanelFormHijos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelFormHijos.Location = new System.Drawing.Point(250, 0);
             this.PanelFormHijos.Name = "PanelFormHijos";
-            this.PanelFormHijos.Size = new System.Drawing.Size(1133, 808);
+            this.PanelFormHijos.Size = new System.Drawing.Size(1133, 906);
             this.PanelFormHijos.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(465, 167);
+            this.pictureBox1.Location = new System.Drawing.Point(465, 216);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(216, 233);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // Btn_Proveedores
+            // 
+            this.Btn_Proveedores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Proveedores.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Btn_Proveedores.Location = new System.Drawing.Point(0, 180);
+            this.Btn_Proveedores.Name = "Btn_Proveedores";
+            this.Btn_Proveedores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.Btn_Proveedores.Size = new System.Drawing.Size(250, 45);
+            this.Btn_Proveedores.TabIndex = 3;
+            this.Btn_Proveedores.Text = "Proveedores";
+            this.Btn_Proveedores.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.Btn_Proveedores.UseVisualStyleBackColor = true;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1383, 908);
+            this.ClientSize = new System.Drawing.Size(1383, 1006);
             this.Controls.Add(this.PanelFormHijos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.MenuLateral);
@@ -486,6 +502,7 @@ namespace CP_Control
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel PanelFormHijos;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Btn_Proveedores;
     }
 }
 
