@@ -107,6 +107,11 @@ namespace CP_Control
             string consulta = "CP_Proveedor_ConsultaProveedor";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
+        public void Set_InsertaProveedor(ProveedorViewModel model) 
+        {
+            string consulta = "EXEC CP_Proveedor_ProveedorInserta @CP_Proveedor = '"+model.Proveedor+"', @CP_RFC = '"+model.RFC+"', @CP_Telefono ="+model.Telefono+", @CP_Nombre_contacto ='"+model.Contacto+"', @CP_Cargo_Contacto  ='"+model.CargoContacto+"', @CP_Direccion = '"+model.Direccion+"', @CP_CP ='"+model.CP+"', @CP_Ciudad = '"+model.Ciudad+"', @CP_Telefono_Cont = "+model.TelContacto+", @CP_Correo = '"+model.Correo+"', @CP_Tipo_Proveedor  ="+model.TipoProveedor;
+            MBD.InsertaModificaBD(consulta);
+        }
         #endregion
     }
 }
