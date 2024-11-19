@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,11 +21,12 @@ namespace CP_Control
         {
             InitializeComponent();
             Get_TipoProveedor();
+            
         }
 
         public void Get_TipoProveedor()
         {
-            DataTable dt = Cta.Get_Proveedor();
+            DataTable dt = Cta.Get_TProveedor();
             if (dt.Columns.Count > 0 && dt !=null) 
             {
                 D_TipoProv.DisplayMember = "Descripcion";
@@ -49,22 +52,34 @@ namespace CP_Control
 
         private void Btn_GuardarP_Click(object sender, EventArgs e)
         {
+            string Prov = Txt_Proveedor.Text.Trim();
+            string RFC = Txt_RFCP.Text.Trim();
+            string DireccionP = Txt_DireccionP.Text.Trim();
+            string CiudadP = Txt_CiudadP.Text.Trim();
+            string CPP = Txt_CPP.Text.Trim();
+            int TelefonoP = Convert.ToInt32(Txt_TelProv.Text.Trim());
+            string ContactoP = Txt_ContactoP.Text.Trim();
+            string CargoContactoP = Txt_CargoContP.Text.Trim();
+            int TelContactoP = Convert.ToInt32(Txt_TelContP.Text.Trim());
+            string CorreoP = Txt_CorreoP.Text.Trim();
+            string TipoProveedorP = D_TipoProv.SelectedValue.ToString();
+
             if (Txt_Proveedor.Text != "")
             {
 
                 var nuevoProveedor = new ProveedorViewModel
                 {
-                    Proveedor = Txt_Proveedor.Text.Trim(),
-                    RFC = Txt_RFCP.Text.Trim(),
-                    Direccion = Txt_DireccionP.Text.Trim(),
-                    Ciudad = Txt_CiudadP.Text.Trim(),
-                    CP = Txt_CPP.Text.Trim(),
-                    Telefono = Convert.ToInt32(Txt_TelProv.Text.Trim()),
-                    Contacto = Txt_ContactoP.Text.Trim(),
-                    CargoContacto = Txt_CargoContP.Text.Trim(),
-                    TelContacto = Convert.ToInt32(Txt_CargoContP.Text.Trim()),
-                    Correo = Txt_CorreoP.Text.Trim(),
-                    TipoProveedor = Convert.ToInt32(D_TipoProv.SelectedValue)
+                    Proveedor = Prov,
+                    RFC = RFC,
+                    Direccion = DireccionP,
+                    Ciudad = CiudadP,
+                    CP = CPP,
+                    Telefono = TelefonoP,
+                    Contacto = ContactoP,
+                    CargoContacto = CargoContactoP,
+                    TelContacto = TelContactoP,
+                    Correo = CorreoP,
+                    TipoProveedor = TipoProveedorP
                 };
                 Cta.Set_InsertaProveedor(nuevoProveedor);
                 ProveedorNuevo?.Invoke(sender, EventArgs.Empty);
@@ -73,6 +88,35 @@ namespace CP_Control
             else 
             {
                 MessageBox.Show("Debes ingresar el nombre del proveedor.");
+            }
+        }
+       
+
+        private void Txt_TelProv_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(Txt_TelProv.Text, out _))
+            {
+                Txt_TelProv.BackColor = Color.White;
+                Txt_TelProv.ForeColor = Color.Black;
+            }
+            else
+            {
+                Txt_TelProv.BackColor = Color.LightCoral;
+                Txt_TelProv.ForeColor = Color.White;
+            }
+        }
+
+        private void Txt_TelContP_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(Txt_TelContP.Text, out _))
+            {
+                Txt_TelContP.BackColor = Color.White;
+                Txt_TelContP.ForeColor = Color.Black;
+            }
+            else
+            {
+                Txt_TelContP.BackColor = Color.LightCoral;
+                Txt_TelContP.ForeColor = Color.White;
             }
         }
     }

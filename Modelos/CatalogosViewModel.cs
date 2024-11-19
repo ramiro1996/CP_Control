@@ -25,7 +25,7 @@ namespace CP_Control.CP_Control.Modelos
         public string CargoContacto {  get; set; }
         public int TelContacto { get;set; }
         public string Correo { get; set; }
-        public int TipoProveedor { get; set; }
+        public string TipoProveedor { get; set; }
     }
 
 }

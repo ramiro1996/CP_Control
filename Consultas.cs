@@ -102,9 +102,9 @@ namespace CP_Control
 
         #endregion
         #region Proveedores
-        public DataTable Get_Proveedores() 
+        public DataTable Get_TProveedor() 
         {
-            string consulta = "CP_Proveedor_ConsultaProveedor";
+            string consulta = "EXEC CP_Clasificacion_ConsultaClasificacion";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
         public void Set_InsertaProveedor(ProveedorViewModel model) 

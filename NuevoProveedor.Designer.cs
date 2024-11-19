@@ -110,6 +110,7 @@
             this.Txt_TelProv.Name = "Txt_TelProv";
             this.Txt_TelProv.Size = new System.Drawing.Size(226, 31);
             this.Txt_TelProv.TabIndex = 6;
+            this.Txt_TelProv.TextChanged += new System.EventHandler(this.Txt_TelProv_TextChanged);
             // 
             // L_ContactoP
             // 
@@ -159,6 +160,7 @@
             this.Txt_TelContP.Name = "Txt_TelContP";
             this.Txt_TelContP.Size = new System.Drawing.Size(165, 31);
             this.Txt_TelContP.TabIndex = 12;
+            this.Txt_TelContP.TextChanged += new System.EventHandler(this.Txt_TelContP_TextChanged);
             // 
             // L_DirecP
             // 

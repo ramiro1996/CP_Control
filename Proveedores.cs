@@ -20,7 +20,7 @@ namespace CP_Control
         }
         public void Get_Proveedor()
         {
-            DataTable dta = Cta.Get_Proveedores();
+            DataTable dta = Cta.Get_Proveedor();
             G_Proveedor.AutoGenerateColumns=false;
 
             G_Proveedor.Columns["Id"].DataPropertyName="ID";
