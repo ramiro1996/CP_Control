@@ -103,6 +103,7 @@ namespace CP_Control
             {
                 Txt_TelProv.BackColor = Color.LightCoral;
                 Txt_TelProv.ForeColor = Color.White;
+                MessageBox.Show("El campo solo acepta valores numericos y sin espacios");
             }
         }
 
@@ -117,6 +118,7 @@ namespace CP_Control
             {
                 Txt_TelContP.BackColor = Color.LightCoral;
                 Txt_TelContP.ForeColor = Color.White;
+                MessageBox.Show("El campo solo acepta valores numericos y sin espacios");
             }
         }
     }
