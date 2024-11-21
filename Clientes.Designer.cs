@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.G_Clientes = new System.Windows.Forms.DataGridView();
+            this.Btn_Clientes = new System.Windows.Forms.Button();
+            this.Btn_CerrarClientes = new System.Windows.Forms.Button();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RFC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,8 +38,6 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Btn_Clientes = new System.Windows.Forms.Button();
-            this.Btn_CerrarClientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.G_Clientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,55 +62,6 @@
             this.G_Clientes.Size = new System.Drawing.Size(1047, 560);
             this.G_Clientes.TabIndex = 0;
             // 
-            // IdCliente
-            // 
-            this.IdCliente.HeaderText = "Id";
-            this.IdCliente.MinimumWidth = 10;
-            this.IdCliente.Name = "IdCliente";
-            this.IdCliente.Width = 200;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Cliente";
-            this.Nombre.MinimumWidth = 10;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 200;
-            // 
-            // RFC
-            // 
-            this.RFC.HeaderText = "RFC";
-            this.RFC.MinimumWidth = 10;
-            this.RFC.Name = "RFC";
-            this.RFC.Width = 200;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.MinimumWidth = 10;
-            this.Direccion.Name = "Direccion";
-            this.Direccion.Width = 200;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Estado";
-            this.Status.MinimumWidth = 10;
-            this.Status.Name = "Status";
-            this.Status.Width = 200;
-            // 
-            // FRegistro
-            // 
-            this.FRegistro.HeaderText = "Fecha registro";
-            this.FRegistro.MinimumWidth = 10;
-            this.FRegistro.Name = "FRegistro";
-            this.FRegistro.Width = 200;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.MinimumWidth = 10;
-            this.Correo.Name = "Correo";
-            this.Correo.Width = 200;
-            // 
             // Btn_Clientes
             // 
             this.Btn_Clientes.Location = new System.Drawing.Point(48, 41);
@@ -131,6 +82,55 @@
             this.Btn_CerrarClientes.Text = "Cerrar";
             this.Btn_CerrarClientes.UseVisualStyleBackColor = true;
             this.Btn_CerrarClientes.Click += new System.EventHandler(this.Btn_CerrarClientes_Click);
+            // 
+            // IdCliente
+            // 
+            this.IdCliente.HeaderText = "Id";
+            this.IdCliente.MinimumWidth = 10;
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.Width = 50;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Cliente";
+            this.Nombre.MinimumWidth = 10;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 200;
+            // 
+            // RFC
+            // 
+            this.RFC.HeaderText = "RFC";
+            this.RFC.MinimumWidth = 10;
+            this.RFC.Name = "RFC";
+            this.RFC.Width = 150;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.MinimumWidth = 10;
+            this.Direccion.Name = "Direccion";
+            this.Direccion.Width = 200;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Estado";
+            this.Status.MinimumWidth = 10;
+            this.Status.Name = "Status";
+            this.Status.Width = 90;
+            // 
+            // FRegistro
+            // 
+            this.FRegistro.HeaderText = "Fecha registro";
+            this.FRegistro.MinimumWidth = 10;
+            this.FRegistro.Name = "FRegistro";
+            this.FRegistro.Width = 90;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 10;
+            this.Correo.Name = "Correo";
+            this.Correo.Width = 200;
             // 
             // Clientes
             // 

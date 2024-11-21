@@ -86,7 +86,7 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 10;
             this.Id.Name = "Id";
-            this.Id.Width = 200;
+            this.Id.Width = 50;
             // 
             // RSocial
             // 
@@ -107,7 +107,7 @@
             this.Telefono.HeaderText = "Teléfono";
             this.Telefono.MinimumWidth = 10;
             this.Telefono.Name = "Telefono";
-            this.Telefono.Width = 200;
+            this.Telefono.Width = 150;
             // 
             // Direccion
             // 

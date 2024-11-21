@@ -93,7 +93,7 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 10;
             this.Id.Name = "Id";
-            this.Id.Width = 200;
+            this.Id.Width = 50;
             // 
             // Proyecto
             // 
@@ -142,14 +142,14 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.MinimumWidth = 10;
             this.Estado.Name = "Estado";
-            this.Estado.Width = 200;
+            this.Estado.Width = 120;
             // 
             // FRegistro
             // 
             this.FRegistro.HeaderText = "Fecha registro";
             this.FRegistro.MinimumWidth = 10;
             this.FRegistro.Name = "FRegistro";
-            this.FRegistro.Width = 200;
+            this.FRegistro.Width = 90;
             // 
             // Proyectos
             // 

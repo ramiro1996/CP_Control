@@ -121,5 +121,12 @@ namespace CP_Control
                 MessageBox.Show("Es necesario agregar una descripción.");
             }
         }
+
+        private void CargaDatosModificado(ProductosViewModel model) 
+        {
+            Txt_IdMaterial.Text = model.Id.ToString();
+            Txt_DescripcionM.Text = model.Descripcion;
+
+        }
     }
 }

@@ -4,6 +4,7 @@ namespace CP_Control.CP_Control.Modelos
 {
     public class ProductosViewModel
     {
+        public int Id { get; set; }
         public string Descripcion { get; set; }
         public string Espesor { get; set; }
         public string Color { get; set; }

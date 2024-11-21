@@ -210,6 +210,7 @@
             this.Txt_TelT.Name = "Txt_TelT";
             this.Txt_TelT.Size = new System.Drawing.Size(267, 31);
             this.Txt_TelT.TabIndex = 18;
+            this.Txt_TelT.TextChanged += new System.EventHandler(this.Txt_TelT_TextChanged);
             // 
             // L_DirT
             // 

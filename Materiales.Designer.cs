@@ -91,7 +91,7 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 10;
             this.Id.Name = "Id";
-            this.Id.Width = 200;
+            this.Id.Width = 50;
             // 
             // Descripcion
             // 
@@ -112,14 +112,12 @@
             this.UM.HeaderText = "Unidad";
             this.UM.MinimumWidth = 10;
             this.UM.Name = "UM";
-            this.UM.Width = 200;
             // 
             // Costo
             // 
             this.Costo.HeaderText = "Costo";
             this.Costo.MinimumWidth = 10;
             this.Costo.Name = "Costo";
-            this.Costo.Width = 200;
             // 
             // Proveedor
             // 
@@ -133,14 +131,13 @@
             this.Codigo.HeaderText = "Código";
             this.Codigo.MinimumWidth = 10;
             this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 200;
+            this.Codigo.Width = 120;
             // 
             // Status
             // 
             this.Status.HeaderText = "Estado";
             this.Status.MinimumWidth = 10;
             this.Status.Name = "Status";
-            this.Status.Width = 200;
             // 
             // Materiales
             // 

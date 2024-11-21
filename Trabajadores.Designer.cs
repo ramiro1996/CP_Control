@@ -30,6 +30,7 @@
         {
             this.Btn_Trabajadores = new System.Windows.Forms.Button();
             this.G_Trabajadores = new System.Windows.Forms.DataGridView();
+            this.Btn_Cerrar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +40,6 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Btn_Cerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.G_Trabajadores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,12 +77,22 @@
             this.G_Trabajadores.TabIndex = 1;
             this.G_Trabajadores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.G_Trabajadores_CellContentClick);
             // 
+            // Btn_Cerrar
+            // 
+            this.Btn_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_Cerrar.Location = new System.Drawing.Point(831, 711);
+            this.Btn_Cerrar.Name = "Btn_Cerrar";
+            this.Btn_Cerrar.Size = new System.Drawing.Size(200, 43);
+            this.Btn_Cerrar.TabIndex = 2;
+            this.Btn_Cerrar.Text = "cerrar";
+            this.Btn_Cerrar.UseVisualStyleBackColor = true;
+            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 10;
             this.Id.Name = "Id";
-            this.Id.Width = 200;
+            this.Id.Width = 50;
             // 
             // Nombre
             // 
@@ -110,45 +120,34 @@
             this.Puesto.HeaderText = "Puesto";
             this.Puesto.MinimumWidth = 10;
             this.Puesto.Name = "Puesto";
-            this.Puesto.Width = 200;
+            this.Puesto.Width = 150;
             // 
             // Nivel
             // 
             this.Nivel.HeaderText = "Nivel";
             this.Nivel.MinimumWidth = 10;
             this.Nivel.Name = "Nivel";
-            this.Nivel.Width = 200;
+            this.Nivel.Width = 150;
             // 
             // Usuario
             // 
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.MinimumWidth = 10;
             this.Usuario.Name = "Usuario";
-            this.Usuario.Width = 200;
+            this.Usuario.Width = 150;
             // 
             // Sueldo
             // 
             this.Sueldo.HeaderText = "Sueldo";
             this.Sueldo.MinimumWidth = 10;
             this.Sueldo.Name = "Sueldo";
-            this.Sueldo.Width = 200;
+            this.Sueldo.Width = 150;
             // 
             // Status
             // 
             this.Status.HeaderText = "Status";
             this.Status.MinimumWidth = 10;
             this.Status.Name = "Status";
-            this.Status.Width = 200;
-            // 
-            // Btn_Cerrar
-            // 
-            this.Btn_Cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_Cerrar.Location = new System.Drawing.Point(831, 711);
-            this.Btn_Cerrar.Name = "Btn_Cerrar";
-            this.Btn_Cerrar.Size = new System.Drawing.Size(200, 43);
-            this.Btn_Cerrar.TabIndex = 2;
-            this.Btn_Cerrar.Text = "cerrar";
-            this.Btn_Cerrar.UseVisualStyleBackColor = true;
             // 
             // Trabajadores
             // 

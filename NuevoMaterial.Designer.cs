@@ -45,6 +45,8 @@
             this.D_ProveedorM = new System.Windows.Forms.ComboBox();
             this.L_CodigoM = new System.Windows.Forms.Label();
             this.Btn_GuardarM = new System.Windows.Forms.Button();
+            this.L_IdMaterial = new System.Windows.Forms.Label();
+            this.Txt_IdMaterial = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // L_DescripcionM
@@ -189,12 +191,32 @@
             this.Btn_GuardarM.UseVisualStyleBackColor = true;
             this.Btn_GuardarM.Click += new System.EventHandler(this.Btn_GuardarM_Click);
             // 
+            // L_IdMaterial
+            // 
+            this.L_IdMaterial.AutoSize = true;
+            this.L_IdMaterial.Location = new System.Drawing.Point(29, 237);
+            this.L_IdMaterial.Name = "L_IdMaterial";
+            this.L_IdMaterial.Size = new System.Drawing.Size(29, 25);
+            this.L_IdMaterial.TabIndex = 17;
+            this.L_IdMaterial.Text = "Id";
+            this.L_IdMaterial.Visible = false;
+            // 
+            // Txt_IdMaterial
+            // 
+            this.Txt_IdMaterial.Location = new System.Drawing.Point(164, 237);
+            this.Txt_IdMaterial.Name = "Txt_IdMaterial";
+            this.Txt_IdMaterial.Size = new System.Drawing.Size(100, 31);
+            this.Txt_IdMaterial.TabIndex = 18;
+            this.Txt_IdMaterial.Visible = false;
+            // 
             // NuevoMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(870, 300);
+            this.Controls.Add(this.Txt_IdMaterial);
+            this.Controls.Add(this.L_IdMaterial);
             this.Controls.Add(this.Btn_GuardarM);
             this.Controls.Add(this.L_CodigoM);
             this.Controls.Add(this.D_ProveedorM);
@@ -238,5 +260,7 @@
         private System.Windows.Forms.ComboBox D_ProveedorM;
         private System.Windows.Forms.Label L_CodigoM;
         private System.Windows.Forms.Button Btn_GuardarM;
+        private System.Windows.Forms.Label L_IdMaterial;
+        private System.Windows.Forms.TextBox Txt_IdMaterial;
     }
 }

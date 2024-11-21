@@ -31,6 +31,15 @@ namespace CP_Control
             D_Productos.Columns["Proveedor"].DataPropertyName = "Proveedor";
             D_Productos.Columns["Codigo"].DataPropertyName = "Codigo";
             D_Productos.Columns["Status"].DataPropertyName = "Status";
+            // Agregar una columna de botón
+            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+            editButtonColumn.HeaderText = "Acción";
+            editButtonColumn.Text = "Editar";
+            editButtonColumn.UseColumnTextForButtonValue = true; // Hace que el texto sea visible
+            D_Productos.Columns.Add(editButtonColumn);
+
+            // Ajustar las columnas si es necesario
+            D_Productos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             if (DTA != null && DTA.Rows.Count>0)
             {
@@ -41,6 +50,18 @@ namespace CP_Control
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int IdMat = Convert.ToInt32(D_Productos.Rows[e.RowIndex].Cells[0].Value);
+            string Descr = D_Productos.Rows[e.RowIndex].Cells[1].Value.ToString();
+            if (e.RowIndex >= 0 && D_Productos.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+
+
+                var nuevoMaterial = new NuevoMaterial(
+                   
+                    );
+                nuevoMaterial.materialInsertado += (s, args) => Get_ObtenProductos();
+                nuevoMaterial.Show();
+            }
 
         }
 
