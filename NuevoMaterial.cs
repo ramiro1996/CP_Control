@@ -13,9 +13,17 @@ namespace CP_Control
 {
     public partial class NuevoMaterial : Form
     {
-        public event EventHandler MaterialGuardado;
+        //public event EventHandler MaterialGuardado;
         Consultas Cta = new Consultas();
         public event EventHandler materialInsertado;
+
+
+        public int IdMater {  get; set; }
+        public string DescrMat {  get; set; }
+        public string EspesorMat {  get; set; }
+        public string ColMat {  get; set; }
+        public string CodMat { get; set; }
+        public decimal costMat { get; set; }
 
         public NuevoMaterial()
         {
@@ -28,8 +36,9 @@ namespace CP_Control
             Get_Unidad();
             Get_Proveedor();
             Get_CargaClasificacion();
+            
         }
-
+        #region CargaMateriales
         public void Get_Unidad() 
         {
             DataTable dt = Cta.Get_UnidadMedida();
@@ -63,6 +72,8 @@ namespace CP_Control
             }
 
         }
+        #endregion
+
         private string creaCodigoMaterial(params TextBox[] textBoxes) 
         {
             string codigo = "";
@@ -83,6 +94,7 @@ namespace CP_Control
 
         private void Btn_GuardarM_Click(object sender, EventArgs e)
         {
+            int idMater;
             string producto = Txt_DescripcionM.Text.Trim();
             string clasificacion = D_ClasificacionM.SelectedValue?.ToString();
             string espesor = Txt_EspesorM.Text.Trim();
@@ -96,7 +108,16 @@ namespace CP_Control
             {
                 if (codigo != null && codigo !="") 
                 {
+                    if (string.IsNullOrEmpty(Txt_IdMaterial.Text))
+                    {
+                        idMater = 0;
+                    }
+                    else
+                    {
+                        idMater = int.Parse(Txt_IdMaterial.Text);
+                    }
                     var newProducto = new ProductosViewModel { 
+                    Id = idMater,
                     Descripcion = producto,
                     Clasificacion = clasificacion,
                     Espesor = espesor,
@@ -122,11 +143,16 @@ namespace CP_Control
             }
         }
 
-        private void CargaDatosModificado(ProductosViewModel model) 
-        {
-            Txt_IdMaterial.Text = model.Id.ToString();
-            Txt_DescripcionM.Text = model.Descripcion;
+       
 
+        private void NuevoMaterial_Load(object sender, EventArgs e)
+        {
+            Txt_IdMaterial.Text = IdMater.ToString();
+            Txt_DescripcionM.Text = DescrMat;
+            Txt_EspesorM.Text = EspesorMat;
+            Txt_ColorM.Text = ColMat;
+            Txt_CodigoM.Text = CodMat;
+            Txt_CostoM.Text = costMat.ToString();
         }
     }
 }

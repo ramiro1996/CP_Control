@@ -96,7 +96,7 @@ namespace CP_Control
         }
         public void Set_InsertaMaterial(ProductosViewModel model) 
         {
-            string consulta = "EXEC CP_Producto_ProductoInserta @CP_Articulo ='"+model.Descripcion+"', @CP_Espesor = '"+model.Unidad+"', @CP_Color ='"+model.Color+"', @CP_Clasificacion ='"+model.Clasificacion+"', @CP_UM = '"+model.Unidad+"',@CP_Costo ="+model.Costo+", @CP_IdProveedor = "+model.IdProveedor+", @CP_Codigo = '"+model.Codigo+"'";
+            string consulta = "EXEC CP_Producto_ProductoInserta @CP_IdArticulo ="+model.Id+" ,@CP_Articulo ='" + model.Descripcion+"', @CP_Espesor = '"+model.Unidad+"', @CP_Color ='"+model.Color+"', @CP_Clasificacion ='"+model.Clasificacion+"', @CP_UM = '"+model.Unidad+"',@CP_Costo ="+model.Costo+", @CP_IdProveedor = "+model.IdProveedor+", @CP_Codigo = '"+model.Codigo+"'";
             MBD.InsertaModificaBD(consulta);
         }
 

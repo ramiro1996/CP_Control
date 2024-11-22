@@ -18,6 +18,7 @@ namespace CP_Control
             InitializeComponent();
             Get_ObtenProductos();
         }
+        private bool botonAgregado = false;
 
         private void Get_ObtenProductos() 
         {
@@ -31,15 +32,22 @@ namespace CP_Control
             D_Productos.Columns["Proveedor"].DataPropertyName = "Proveedor";
             D_Productos.Columns["Codigo"].DataPropertyName = "Codigo";
             D_Productos.Columns["Status"].DataPropertyName = "Status";
+            
             // Agregar una columna de botón
-            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
-            editButtonColumn.HeaderText = "Acción";
-            editButtonColumn.Text = "Editar";
-            editButtonColumn.UseColumnTextForButtonValue = true; // Hace que el texto sea visible
-            D_Productos.Columns.Add(editButtonColumn);
+            if (!botonAgregado)
+            {
+                DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+                editButtonColumn.HeaderText = "Acción";
+                editButtonColumn.Text = "Editar";
+                editButtonColumn.UseColumnTextForButtonValue = true; // Hace que el texto sea visible
+                D_Productos.Columns.Add(editButtonColumn);
+                D_Productos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                botonAgregado = true;
+            }
+            
 
             // Ajustar las columnas si es necesario
-            D_Productos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //D_Productos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             if (DTA != null && DTA.Rows.Count>0)
             {
@@ -52,13 +60,21 @@ namespace CP_Control
         {
             int IdMat = Convert.ToInt32(D_Productos.Rows[e.RowIndex].Cells[0].Value);
             string Descr = D_Productos.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string colM = D_Productos.Rows[e.RowIndex].Cells[2].Value.ToString();
+            decimal costM = Convert.ToDecimal(D_Productos.Rows[e.RowIndex].Cells[4].Value);
+            string codM = D_Productos.Rows[e.RowIndex].Cells[6].Value.ToString();
+
             if (e.RowIndex >= 0 && D_Productos.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
-
-
-                var nuevoMaterial = new NuevoMaterial(
-                   
-                    );
+                var nuevoMaterial = new NuevoMaterial
+                {
+                    IdMater = IdMat,
+                    DescrMat = Descr,
+                    ColMat = colM,
+                    costMat = costM,
+                    CodMat = codM
+                };
+                  
                 nuevoMaterial.materialInsertado += (s, args) => Get_ObtenProductos();
                 nuevoMaterial.Show();
             }
@@ -75,7 +91,6 @@ namespace CP_Control
             var nuevoMaterial = new NuevoMaterial();
             nuevoMaterial.materialInsertado += (s, args) => Get_ObtenProductos();
             nuevoMaterial.Show();
-
         }
     }
 }
