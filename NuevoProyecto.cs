@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CP_Control.CP_Control.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace CP_Control.CP_Control
         public event EventHandler ProyectoInsertado;
         Consultas Cta = new Consultas();
         private Proyectos _proyectos;
+        private string OpcionParaCalendario = "";
+
         public NuevoProyecto()
         {
             InitializeComponent();
@@ -46,13 +49,36 @@ namespace CP_Control.CP_Control
             int Cliente = Convert.ToInt32(D_Cliente.SelectedValue);
             string Direccion = Txt_Direccion.Text.Trim();
             string Codigo = Txt_Codigo.Text.Trim();
+            string FInicio = Txt_FRegistro.Text.Trim();
+            string FEntrega = Txt_FEntrega.Text.Trim();
+            if (string.IsNullOrEmpty(FInicio)) 
+            {
+                FInicio = "0";
+                if (string.IsNullOrEmpty(FEntrega))
+                {
+                    FEntrega = "0";
+                }
+            }
+
             if (Proyecto != "" || Direccion != "" || Codigo != "")
             {
-                Cta.Set_InsertaNuevoProyecto(idproyecto, Proyecto, Cliente, Direccion, Codigo);
-                MessageBox.Show("Registro guardado correctamente");
+                var proyectoNuevo = new ProyectosViewModel 
+                {
+                    IdProyecto = idproyecto,
+                    Proyecto = Proyecto,
+                    Cliente = Cliente,
+                    Direccion = Direccion,
+                    Codigo = Codigo,
+                    FInicio = FInicio,
+                    FEntrega = FEntrega
+                };
+                var resul = Cta.Set_InsertaNuevoProyecto(proyectoNuevo);
                 ProyectoInsertado?.Invoke(this, EventArgs.Empty);
-
                 this.Close();
+                if (resul == 2)
+                {
+                    MessageBox.Show("Registro guardado correctamente");
+                }
 
             }
             else
@@ -65,6 +91,33 @@ namespace CP_Control.CP_Control
         private void NuevoProyecto_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpcionParaCalendario = "FInicio";
+            monthCalendar1.Visible = true;
+            monthCalendar1.BringToFront();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            if (OpcionParaCalendario == "FInicio")
+            {
+                Txt_FRegistro.Text = e.Start.ToString("yyyy-MM-dd");
+            }
+            else if (OpcionParaCalendario == "FEntrega")
+            {
+                Txt_FEntrega.Text = e.Start.ToString("yyyy-MM-dd");
+            }
+            monthCalendar1.Visible = false;
+        }
+
+        private void Btn_FEntrega_Click(object sender, EventArgs e)
+        {
+            OpcionParaCalendario = "FEntrega";
+            monthCalendar1.Visible = true;
+            monthCalendar1.BringToFront();
         }
     }
 }

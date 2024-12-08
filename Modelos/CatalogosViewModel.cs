@@ -28,5 +28,15 @@ namespace CP_Control.CP_Control.Modelos
         public string Correo { get; set; }
         public string TipoProveedor { get; set; }
     }
+    public class ProyectosViewModel 
+    {
+        public int IdProyecto { get; set; }
+        public string Proyecto { get;set;}
+        public int Cliente { get; set; }
+        public string Direccion { get; set; }
+        public string Codigo { get; set; }
+        public string FInicio { get; set; }
+        public string FEntrega { get; set; }
+    }
 
 }

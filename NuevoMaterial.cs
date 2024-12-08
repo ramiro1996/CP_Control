@@ -99,14 +99,14 @@ namespace CP_Control
         private void Btn_GuardarM_Click(object sender, EventArgs e)
         {
             int idMater;
-            string producto = Txt_DescripcionM.Text.Trim();
+            string producto = Txt_DescripcionM.Text.Trim().ToUpper();
             string clasificacion = D_ClasificacionM.SelectedValue?.ToString();
-            string espesor = Txt_EspesorM.Text.Trim();
-            string color = Txt_ColorM.Text.Trim();
+            string espesor = Txt_EspesorM.Text.Trim().ToUpper();
+            string color = Txt_ColorM.Text.Trim().ToUpper();
             int proveedor = Convert.ToInt32(D_ProveedorM.SelectedValue);
             string unidad = D_UM.SelectedValue?.ToString();
             decimal costo = Convert.ToDecimal(Txt_CostoM.Text.Trim());
-            string codigo = Txt_CodigoM.Text.Trim();
+            string codigo = Txt_CodigoM.Text.Trim().ToUpper();
 
             if (producto != null && producto !="")
             {
@@ -142,7 +142,6 @@ namespace CP_Control
                     {
                         MessageBox.Show("Producto actualizado correctamente.");
                     }
-                    //MessageBox.Show("Producto insertado correctamente.");
                 }
                 else
                 {
@@ -165,7 +164,7 @@ namespace CP_Control
             Txt_ColorM.Text = ColMat;
             Txt_CodigoM.Text = CodMat;
             Txt_CostoM.Text = costMat.ToString();
-            //Txt_EspesorM.Text = espesorM.ToString();
+            
             if (provM != null)
             {
                 D_ProveedorM.Text = provM.ToString();
@@ -183,6 +182,20 @@ namespace CP_Control
             }
            
         }
-        
+
+        private void Txt_CostoM_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(Txt_CostoM.Text, out _))
+            {
+                Txt_CostoM.BackColor = Color.White;
+                Txt_CostoM.ForeColor = Color.Black;
+            }
+            else
+            {
+                Txt_CostoM.BackColor= Color.LightCoral;
+                Txt_CostoM.ForeColor= Color.White;
+                MessageBox.Show("El campo solo acepta valores decimales.");
+            }
+        }
     }
 }

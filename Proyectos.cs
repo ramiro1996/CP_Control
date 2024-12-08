@@ -22,6 +22,7 @@ namespace CP_Control.CP_Control
             InitializeComponent();
             Get_Proyectos();
         }
+        private bool btn_ModMaterial = false;
          
         private void Get_Proyectos()
         {
@@ -39,6 +40,17 @@ namespace CP_Control.CP_Control
             DGV_Proyectos.Columns["Estado"].DataPropertyName = "Estado";
             DGV_Proyectos.Columns["FRegistro"].DataPropertyName = "FRegistro";
 
+            if (!btn_ModMaterial)
+            {
+                DataGridViewButtonColumn buttonEditaProyecto = new DataGridViewButtonColumn();
+                buttonEditaProyecto.Name = "Btn_EditaProyecto";
+                buttonEditaProyecto.HeaderText = "Acción";
+                buttonEditaProyecto.Text = "Editar";
+                buttonEditaProyecto.UseColumnTextForButtonValue = true;
+                DGV_Proyectos.Columns.Add(buttonEditaProyecto);
+                DGV_Proyectos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                btn_ModMaterial = true;
+            }
             // Verificar si el DataTable tiene filas
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -56,20 +68,22 @@ namespace CP_Control.CP_Control
 
         private void DGV_Proyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            int IdProy = Convert.ToInt32(DGV_Proyectos.Rows[e.RowIndex].Cells[0].Value);
+            string Proy = DGV_Proyectos.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string CodProy = DGV_Proyectos.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string Cliente = DGV_Proyectos.Rows[e.RowIndex].Cells[3].Value.ToString();
+            if (true)
+            {
+
+            }
 
         }
 
         private void Btn_NuevoProyecto_Click(object sender, EventArgs e)
         {
-            //Form NuevoProyecto = new NuevoProyecto();
-            //NuevoProyecto.Show();
+           
             var nuevoProyectoForm = new NuevoProyecto();
-
-            // Suscríbete al evento ProyectoInsertado
             nuevoProyectoForm.ProyectoInsertado += (s, args) => Get_Proyectos();
-
-            // Muestra el formulario de NuevoProyecto
             nuevoProyectoForm.Show();
         }
     }

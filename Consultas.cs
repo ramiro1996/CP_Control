@@ -29,10 +29,11 @@ namespace CP_Control
             string consulta = "SELECT Id,Nombre FROM CP_CLIENTES";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
-        public void Set_InsertaNuevoProyecto(int idProyecto, string proyecto, int idCliente, string direccion, string codigo)
+        public int Set_InsertaNuevoProyecto(ProyectosViewModel model)
         {
-            string consulta = "EXEC CP_Proyectos_InsertaModifica @CP_idProyecto="+idProyecto+", @CP_Proyecto='"+proyecto+"',@CP_IdCliente="+idCliente+", @CP_Direccion='"+direccion+"',@CP_Codigo='"+codigo+"'";
-             MBD.InsertaModificaBD(consulta);
+            string consulta = "EXEC CP_Proyectos_InsertaModifica @CP_idProyecto="+model.IdProyecto+", @CP_Proyecto='"+model.Proyecto+"',@CP_IdCliente="+model.Cliente+", @CP_Direccion='"+model.Direccion+"',@CP_Codigo='"+model.Codigo+ "', @CP_FInicio    = '"+model.FInicio+"', @CP_FEntrega   = '"+model.FEntrega+"' ";
+             var res = MBD.ConsultaEscalarBD(consulta);
+            return Convert.ToInt32(res);
         }
         #endregion
 

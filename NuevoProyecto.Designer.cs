@@ -37,6 +37,11 @@
             this.L_Codigo = new System.Windows.Forms.Label();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Btn_GuardarProyecto = new System.Windows.Forms.Button();
+            this.Btn_FInicio = new System.Windows.Forms.Button();
+            this.Txt_FRegistro = new System.Windows.Forms.TextBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.Btn_FEntrega = new System.Windows.Forms.Button();
+            this.Txt_FEntrega = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // L_Proyecto
@@ -114,11 +119,59 @@
             this.Btn_GuardarProyecto.UseVisualStyleBackColor = true;
             this.Btn_GuardarProyecto.Click += new System.EventHandler(this.Btn_GuardarProyecto_Click);
             // 
+            // Btn_FInicio
+            // 
+            this.Btn_FInicio.Location = new System.Drawing.Point(33, 203);
+            this.Btn_FInicio.Name = "Btn_FInicio";
+            this.Btn_FInicio.Size = new System.Drawing.Size(163, 38);
+            this.Btn_FInicio.TabIndex = 10;
+            this.Btn_FInicio.Text = "Fecha Inicio";
+            this.Btn_FInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_FInicio.UseVisualStyleBackColor = true;
+            this.Btn_FInicio.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Txt_FRegistro
+            // 
+            this.Txt_FRegistro.Location = new System.Drawing.Point(206, 207);
+            this.Txt_FRegistro.Name = "Txt_FRegistro";
+            this.Txt_FRegistro.Size = new System.Drawing.Size(159, 31);
+            this.Txt_FRegistro.TabIndex = 12;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(377, -16);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 13;
+            this.monthCalendar1.Visible = false;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // Btn_FEntrega
+            // 
+            this.Btn_FEntrega.Location = new System.Drawing.Point(371, 201);
+            this.Btn_FEntrega.Name = "Btn_FEntrega";
+            this.Btn_FEntrega.Size = new System.Drawing.Size(209, 42);
+            this.Btn_FEntrega.TabIndex = 14;
+            this.Btn_FEntrega.Text = "Fecha Entrega";
+            this.Btn_FEntrega.UseVisualStyleBackColor = true;
+            this.Btn_FEntrega.Click += new System.EventHandler(this.Btn_FEntrega_Click);
+            // 
+            // Txt_FEntrega
+            // 
+            this.Txt_FEntrega.Location = new System.Drawing.Point(590, 207);
+            this.Txt_FEntrega.Name = "Txt_FEntrega";
+            this.Txt_FEntrega.Size = new System.Drawing.Size(186, 31);
+            this.Txt_FEntrega.TabIndex = 15;
+            // 
             // NuevoProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 274);
+            this.ClientSize = new System.Drawing.Size(1177, 320);
+            this.Controls.Add(this.Txt_FEntrega);
+            this.Controls.Add(this.Btn_FEntrega);
+            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.Txt_FRegistro);
+            this.Controls.Add(this.Btn_FInicio);
             this.Controls.Add(this.Btn_GuardarProyecto);
             this.Controls.Add(this.Txt_Codigo);
             this.Controls.Add(this.L_Codigo);
@@ -148,5 +201,10 @@
         private System.Windows.Forms.Label L_Codigo;
         private System.Windows.Forms.TextBox Txt_Codigo;
         private System.Windows.Forms.Button Btn_GuardarProyecto;
+        private System.Windows.Forms.Button Btn_FInicio;
+        private System.Windows.Forms.TextBox Txt_FRegistro;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button Btn_FEntrega;
+        private System.Windows.Forms.TextBox Txt_FEntrega;
     }
 }

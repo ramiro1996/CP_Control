@@ -112,6 +112,7 @@
             this.Txt_CostoM.Name = "Txt_CostoM";
             this.Txt_CostoM.Size = new System.Drawing.Size(227, 31);
             this.Txt_CostoM.TabIndex = 7;
+            this.Txt_CostoM.TextChanged += new System.EventHandler(this.Txt_CostoM_TextChanged);
             // 
             // D_ClasificacionM
             // 
