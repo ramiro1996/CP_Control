@@ -31,6 +31,7 @@
             this.D_Productos = new System.Windows.Forms.DataGridView();
             this.Btn_NuevoMaterial = new System.Windows.Forms.Button();
             this.Btn_CerrarM = new System.Windows.Forms.Button();
+            this.Txt_Busca = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +40,8 @@
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Espesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.D_Productos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +59,9 @@
             this.Costo,
             this.Proveedor,
             this.Codigo,
-            this.Status});
+            this.Status,
+            this.Clasificacion,
+            this.Espesor});
             this.D_Productos.Location = new System.Drawing.Point(48, 117);
             this.D_Productos.Name = "D_Productos";
             this.D_Productos.RowHeadersWidth = 82;
@@ -86,6 +91,15 @@
             this.Btn_CerrarM.UseVisualStyleBackColor = true;
             this.Btn_CerrarM.Click += new System.EventHandler(this.Btn_CerrarM_Click);
             // 
+            // Txt_Busca
+            // 
+            this.Txt_Busca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Busca.Location = new System.Drawing.Point(852, 54);
+            this.Txt_Busca.Name = "Txt_Busca";
+            this.Txt_Busca.Size = new System.Drawing.Size(243, 31);
+            this.Txt_Busca.TabIndex = 4;
+            this.Txt_Busca.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
@@ -112,12 +126,14 @@
             this.UM.HeaderText = "Unidad";
             this.UM.MinimumWidth = 10;
             this.UM.Name = "UM";
+            this.UM.Width = 200;
             // 
             // Costo
             // 
             this.Costo.HeaderText = "Costo";
             this.Costo.MinimumWidth = 10;
             this.Costo.Name = "Costo";
+            this.Costo.Width = 200;
             // 
             // Proveedor
             // 
@@ -138,6 +154,23 @@
             this.Status.HeaderText = "Estado";
             this.Status.MinimumWidth = 10;
             this.Status.Name = "Status";
+            this.Status.Width = 200;
+            // 
+            // Clasificacion
+            // 
+            this.Clasificacion.HeaderText = "Clasificación";
+            this.Clasificacion.MinimumWidth = 10;
+            this.Clasificacion.Name = "Clasificacion";
+            this.Clasificacion.Visible = false;
+            this.Clasificacion.Width = 200;
+            // 
+            // Espesor
+            // 
+            this.Espesor.HeaderText = "Espesor";
+            this.Espesor.MinimumWidth = 10;
+            this.Espesor.Name = "Espesor";
+            this.Espesor.Visible = false;
+            this.Espesor.Width = 200;
             // 
             // Materiales
             // 
@@ -145,6 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1133, 808);
+            this.Controls.Add(this.Txt_Busca);
             this.Controls.Add(this.Btn_CerrarM);
             this.Controls.Add(this.Btn_NuevoMaterial);
             this.Controls.Add(this.D_Productos);
@@ -153,6 +187,7 @@
             this.Text = "Materiales";
             ((System.ComponentModel.ISupportInitialize)(this.D_Productos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -161,6 +196,7 @@
         private System.Windows.Forms.DataGridView D_Productos;
         private System.Windows.Forms.Button Btn_NuevoMaterial;
         private System.Windows.Forms.Button Btn_CerrarM;
+        private System.Windows.Forms.TextBox Txt_Busca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Color;
@@ -169,5 +205,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clasificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Espesor;
     }
 }

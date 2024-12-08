@@ -199,6 +199,7 @@
             this.L_IdMaterial.Size = new System.Drawing.Size(29, 25);
             this.L_IdMaterial.TabIndex = 17;
             this.L_IdMaterial.Text = "Id";
+            this.L_IdMaterial.Visible = false;
             // 
             // Txt_IdMaterial
             // 
@@ -206,6 +207,7 @@
             this.Txt_IdMaterial.Name = "Txt_IdMaterial";
             this.Txt_IdMaterial.Size = new System.Drawing.Size(100, 31);
             this.Txt_IdMaterial.TabIndex = 18;
+            this.Txt_IdMaterial.Visible = false;
             // 
             // NuevoMaterial
             // 

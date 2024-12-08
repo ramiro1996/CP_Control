@@ -24,6 +24,10 @@ namespace CP_Control
         public string ColMat {  get; set; }
         public string CodMat { get; set; }
         public decimal costMat { get; set; }
+        public string provM {  get; set; }
+        public string unidadM { get; set; }
+        public string Clasifi {  get; set; }
+        public string espesorM { get; set; }
 
         public NuevoMaterial()
         {
@@ -127,10 +131,18 @@ namespace CP_Control
                     Costo = costo,
                     Codigo = codigo
                     };
-                    Cta.Set_InsertaMaterial(newProducto);
+                    var res = Cta.Set_InsertaMaterial(newProducto);
                     materialInsertado?.Invoke(sender, EventArgs.Empty);
                     this.Close();
-                    MessageBox.Show("Producto insertado correctamente.");
+                    if (res == 1)
+                    {
+                        MessageBox.Show("Producto insertado correctamente.");
+                    }
+                    else if (res == 0)
+                    {
+                        MessageBox.Show("Producto actualizado correctamente.");
+                    }
+                    //MessageBox.Show("Producto insertado correctamente.");
                 }
                 else
                 {
@@ -153,6 +165,24 @@ namespace CP_Control
             Txt_ColorM.Text = ColMat;
             Txt_CodigoM.Text = CodMat;
             Txt_CostoM.Text = costMat.ToString();
+            //Txt_EspesorM.Text = espesorM.ToString();
+            if (provM != null)
+            {
+                D_ProveedorM.Text = provM.ToString();
+                if (unidadM != null)
+                {
+                    D_UM.Text = unidadM.ToString();
+                    if (Clasifi != null)
+                    {
+                        D_ClasificacionM.Text = Clasifi.ToString();
+                    }
+                }
+            }
+            else {
+                CargaDrops();
+            }
+           
         }
+        
     }
 }
