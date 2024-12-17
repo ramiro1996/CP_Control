@@ -40,6 +40,7 @@
             this.FEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Txt_BuscaProy = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Proyectos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,11 +152,21 @@
             this.FRegistro.Name = "FRegistro";
             this.FRegistro.Width = 90;
             // 
+            // Txt_BuscaProy
+            // 
+            this.Txt_BuscaProy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_BuscaProy.Location = new System.Drawing.Point(884, 58);
+            this.Txt_BuscaProy.Name = "Txt_BuscaProy";
+            this.Txt_BuscaProy.Size = new System.Drawing.Size(211, 31);
+            this.Txt_BuscaProy.TabIndex = 6;
+            this.Txt_BuscaProy.TextChanged += new System.EventHandler(this.Txt_BuscaProy_TextChanged);
+            // 
             // Proyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 808);
+            this.Controls.Add(this.Txt_BuscaProy);
             this.Controls.Add(this.Btn_Cerrar);
             this.Controls.Add(this.Btn_NuevoProyecto);
             this.Controls.Add(this.DGV_Proyectos);
@@ -164,6 +175,7 @@
             this.Text = "Proyectos";
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Proyectos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,5 +193,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn FRegistro;
+        private System.Windows.Forms.TextBox Txt_BuscaProy;
     }
 }

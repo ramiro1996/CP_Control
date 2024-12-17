@@ -105,5 +105,14 @@ namespace CP_Control.CP_Control
             nuevoProyectoForm.ProyectoInsertado += (s, args) => Get_Proyectos();
             nuevoProyectoForm.Show();
         }
+
+        private void Txt_BuscaProy_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt =  (DataTable)DGV_Proyectos.DataSource;
+            if (dt != null) 
+            {
+                dt.DefaultView.RowFilter = string.Format("Proyecto like '%{0}%' OR Estado like '%{0}%'", Txt_BuscaProy.Text);
+            }
+        }
     }
 }

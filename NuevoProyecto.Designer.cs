@@ -123,7 +123,7 @@
             // 
             // Btn_FInicio
             // 
-            this.Btn_FInicio.Location = new System.Drawing.Point(33, 203);
+            this.Btn_FInicio.Location = new System.Drawing.Point(33, 205);
             this.Btn_FInicio.Name = "Btn_FInicio";
             this.Btn_FInicio.Size = new System.Drawing.Size(163, 38);
             this.Btn_FInicio.TabIndex = 10;
@@ -172,6 +172,7 @@
             this.L_IdProy.Size = new System.Drawing.Size(114, 25);
             this.L_IdProy.TabIndex = 16;
             this.L_IdProy.Text = "IdProyecto";
+            this.L_IdProy.Visible = false;
             // 
             // Txt_IdProy
             // 
@@ -179,6 +180,7 @@
             this.Txt_IdProy.Name = "Txt_IdProy";
             this.Txt_IdProy.Size = new System.Drawing.Size(105, 31);
             this.Txt_IdProy.TabIndex = 17;
+            this.Txt_IdProy.Visible = false;
             // 
             // NuevoProyecto
             // 
@@ -203,7 +205,7 @@
             this.Controls.Add(this.L_Proyecto);
             this.Name = "NuevoProyecto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NuevoProyecto";
+            this.Text = "Nuevo proyecto";
             this.Load += new System.EventHandler(this.NuevoProyecto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
