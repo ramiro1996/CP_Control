@@ -42,6 +42,8 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.Btn_FEntrega = new System.Windows.Forms.Button();
             this.Txt_FEntrega = new System.Windows.Forms.TextBox();
+            this.L_IdProy = new System.Windows.Forms.Label();
+            this.Txt_IdProy = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // L_Proyecto
@@ -162,11 +164,29 @@
             this.Txt_FEntrega.Size = new System.Drawing.Size(186, 31);
             this.Txt_FEntrega.TabIndex = 15;
             // 
+            // L_IdProy
+            // 
+            this.L_IdProy.AutoSize = true;
+            this.L_IdProy.Location = new System.Drawing.Point(28, 259);
+            this.L_IdProy.Name = "L_IdProy";
+            this.L_IdProy.Size = new System.Drawing.Size(114, 25);
+            this.L_IdProy.TabIndex = 16;
+            this.L_IdProy.Text = "IdProyecto";
+            // 
+            // Txt_IdProy
+            // 
+            this.Txt_IdProy.Location = new System.Drawing.Point(152, 259);
+            this.Txt_IdProy.Name = "Txt_IdProy";
+            this.Txt_IdProy.Size = new System.Drawing.Size(105, 31);
+            this.Txt_IdProy.TabIndex = 17;
+            // 
             // NuevoProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1177, 320);
+            this.Controls.Add(this.Txt_IdProy);
+            this.Controls.Add(this.L_IdProy);
             this.Controls.Add(this.Txt_FEntrega);
             this.Controls.Add(this.Btn_FEntrega);
             this.Controls.Add(this.monthCalendar1);
@@ -206,5 +226,7 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button Btn_FEntrega;
         private System.Windows.Forms.TextBox Txt_FEntrega;
+        private System.Windows.Forms.Label L_IdProy;
+        private System.Windows.Forms.TextBox Txt_IdProy;
     }
 }

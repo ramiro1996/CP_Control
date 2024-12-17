@@ -19,6 +19,14 @@ namespace CP_Control.CP_Control
         private Proyectos _proyectos;
         private string OpcionParaCalendario = "";
 
+        public int IdPryto { get; set; }
+        public string NombreProy { get; set; }
+        public string DirProy { get; set; }
+        public string CodProy { get; set; }
+        public string FechInicio { get; set; }
+        public string FechEntrega { get; set; }
+        public string NombreCliente { get; set; }
+
         public NuevoProyecto()
         {
             InitializeComponent();
@@ -44,7 +52,7 @@ namespace CP_Control.CP_Control
 
         private void Btn_GuardarProyecto_Click(object sender, EventArgs e)
         {
-            int idproyecto = 0;
+            int idproyecto;
             string Proyecto = Txt_Proyecto.Text.Trim();
             int Cliente = Convert.ToInt32(D_Cliente.SelectedValue);
             string Direccion = Txt_Direccion.Text.Trim();
@@ -59,9 +67,17 @@ namespace CP_Control.CP_Control
                     FEntrega = "0";
                 }
             }
-
+            
             if (Proyecto != "" || Direccion != "" || Codigo != "")
             {
+                if (string.IsNullOrEmpty(Txt_IdProy.Text))
+                {
+                    idproyecto = 0;
+                }
+                else
+                {
+                    idproyecto = int.Parse(Txt_IdProy.Text);
+                }
                 var proyectoNuevo = new ProyectosViewModel 
                 {
                     IdProyecto = idproyecto,
@@ -77,7 +93,11 @@ namespace CP_Control.CP_Control
                 this.Close();
                 if (resul == 2)
                 {
-                    MessageBox.Show("Registro guardado correctamente");
+                    MessageBox.Show("Registro guardado correctamente.");
+                }
+                else if (resul == 1)
+                {
+                    MessageBox.Show("Registro modificado correctamente.");
                 }
 
             }
@@ -90,7 +110,21 @@ namespace CP_Control.CP_Control
 
         private void NuevoProyecto_Load(object sender, EventArgs e)
         {
-
+            Txt_IdProy.Text = IdPryto.ToString();
+            Txt_Proyecto.Text = NombreProy;
+            Txt_Direccion.Text = DirProy;
+            Txt_Codigo.Text = CodProy;
+            Txt_FRegistro.Text = FechInicio;
+            Txt_FEntrega.Text = FechEntrega;
+            
+            if (NombreCliente != null)
+            {
+                D_Cliente.Text = NombreCliente.ToString();
+            }
+            else
+            {
+                Set_Cliente();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

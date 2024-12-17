@@ -1,4 +1,5 @@
 ﻿using CP_Control.CP_Control.IRepositorios;
+using CP_Control.CP_Control.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,7 @@ namespace CP_Control.CP_Control
             InitializeComponent();
             Get_Proyectos();
         }
-        private bool btn_ModMaterial = false;
+        private bool btn_ModProyecto = false;
          
         private void Get_Proyectos()
         {
@@ -40,7 +41,7 @@ namespace CP_Control.CP_Control
             DGV_Proyectos.Columns["Estado"].DataPropertyName = "Estado";
             DGV_Proyectos.Columns["FRegistro"].DataPropertyName = "FRegistro";
 
-            if (!btn_ModMaterial)
+            if (!btn_ModProyecto)
             {
                 DataGridViewButtonColumn buttonEditaProyecto = new DataGridViewButtonColumn();
                 buttonEditaProyecto.Name = "Btn_EditaProyecto";
@@ -49,7 +50,7 @@ namespace CP_Control.CP_Control
                 buttonEditaProyecto.UseColumnTextForButtonValue = true;
                 DGV_Proyectos.Columns.Add(buttonEditaProyecto);
                 DGV_Proyectos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                btn_ModMaterial = true;
+                btn_ModProyecto = true;
             }
             // Verificar si el DataTable tiene filas
             if (dt != null && dt.Rows.Count > 0)
@@ -68,13 +69,31 @@ namespace CP_Control.CP_Control
 
         private void DGV_Proyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int IdProy = Convert.ToInt32(DGV_Proyectos.Rows[e.RowIndex].Cells[0].Value);
+            int IdProy = Convert.ToInt32(DGV_Proyectos.Rows[e.RowIndex].Cells[0].Value.ToString());
             string Proy = DGV_Proyectos.Rows[e.RowIndex].Cells[1].Value.ToString();
             string CodProy = DGV_Proyectos.Rows[e.RowIndex].Cells[2].Value.ToString();
             string Cliente = DGV_Proyectos.Rows[e.RowIndex].Cells[3].Value.ToString();
-            if (true)
-            {
+            string direc = DGV_Proyectos.Rows[e.RowIndex].Cells[4].Value.ToString();
+            string FInic = DGV_Proyectos.Rows[e.RowIndex].Cells[5].Value.ToString();
+            string FEntr = DGV_Proyectos.Rows[e.RowIndex].Cells[6].Value.ToString();
 
+            if (e.RowIndex >= 0 && DGV_Proyectos.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                if (DGV_Proyectos.Columns[e.ColumnIndex].Name == "Btn_EditaProyecto")
+                {
+                    var nuevoProy = new NuevoProyecto
+                    {
+                    IdPryto = IdProy,
+                    NombreProy = Proy,
+                    CodProy = CodProy,
+                    NombreCliente = Cliente,
+                    DirProy = direc,
+                    FechInicio = FInic,
+                    FechEntrega = FEntr
+                    };
+                    nuevoProy.ProyectoInsertado += (s, args) => Get_Proyectos();
+                    nuevoProy.Show();
+                }
             }
 
         }
