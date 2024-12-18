@@ -13,8 +13,8 @@ namespace CP_Control
     public class Consultas
     {
         ManejadorBDSQL MBD;
-        public Consultas() { 
-        
+        public Consultas() {
+
             MBD = new ManejadorBDSQL();
         }
 
@@ -31,8 +31,14 @@ namespace CP_Control
         }
         public int Set_InsertaNuevoProyecto(ProyectosViewModel model)
         {
-            string consulta = "EXEC CP_Proyectos_InsertaModifica @CP_idProyecto="+model.IdProyecto+", @CP_Proyecto='"+model.Proyecto+"',@CP_IdCliente="+model.Cliente+", @CP_Direccion='"+model.Direccion+"',@CP_Codigo='"+model.Codigo+ "', @CP_FInicio    = '"+model.FInicio+"', @CP_FEntrega   = '"+model.FEntrega+"' ";
-             var res = MBD.ConsultaEscalarBD(consulta);
+            string consulta = "EXEC CP_Proyectos_InsertaModifica @CP_idProyecto=" + model.IdProyecto + ", @CP_Proyecto='" + model.Proyecto + "',@CP_IdCliente=" + model.Cliente + ", @CP_Direccion='" + model.Direccion + "',@CP_Codigo='" + model.Codigo + "', @CP_FInicio    = '" + model.FInicio + "', @CP_FEntrega   = '" + model.FEntrega + "' ";
+            var res = MBD.ConsultaEscalarBD(consulta);
+            return Convert.ToInt32(res);
+        }
+        public int Set_EliminaProyectos(int idProyecto) 
+        {
+            string consulta = "EXEC CP_Proyectos_EliminaProyecto @CP_IdProyecto = "+idProyecto;
+            var res = MBD.ConsultaEscalarBD(consulta);
             return Convert.ToInt32(res);
         }
         #endregion

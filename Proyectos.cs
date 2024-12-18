@@ -24,6 +24,7 @@ namespace CP_Control.CP_Control
             Get_Proyectos();
         }
         private bool btn_ModProyecto = false;
+        private bool btn_EliminaProy = false;
          
         private void Get_Proyectos()
         {
@@ -51,6 +52,17 @@ namespace CP_Control.CP_Control
                 DGV_Proyectos.Columns.Add(buttonEditaProyecto);
                 DGV_Proyectos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 btn_ModProyecto = true;
+            }
+            if (!btn_EliminaProy)
+            {
+                DataGridViewButtonColumn buttonEliminaProy = new DataGridViewButtonColumn();
+                buttonEliminaProy.Name = "Btn_EliminaProy";
+                buttonEliminaProy.HeaderText = "Eliminar";
+                buttonEliminaProy.Text = "Eliminar";
+                buttonEliminaProy.UseColumnTextForButtonValue= true;
+                DGV_Proyectos.Columns.Add(buttonEliminaProy);
+                DGV_Proyectos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                btn_EliminaProy = true;
             }
             // Verificar si el DataTable tiene filas
             if (dt != null && dt.Rows.Count > 0)
@@ -93,6 +105,26 @@ namespace CP_Control.CP_Control
                     };
                     nuevoProy.ProyectoInsertado += (s, args) => Get_Proyectos();
                     nuevoProy.Show();
+                }
+                else if (DGV_Proyectos.Columns[e.ColumnIndex].Name == "Btn_EliminaProy")
+                {
+                    var result = MessageBox.Show("¿Estás seguro de continuar con la acción?", 
+                                 "Confirmación",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        var res = Cta.Set_EliminaProyectos(IdProy);
+                        if (res == 1)
+                        {
+                            MessageBox.Show("El proyecto se eliminó correctamente.");
+                        }
+                        Get_Proyectos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La acción ha sido cancelada.");
+                    }
                 }
             }
 

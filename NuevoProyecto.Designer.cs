@@ -149,7 +149,7 @@
             // 
             // Btn_FEntrega
             // 
-            this.Btn_FEntrega.Location = new System.Drawing.Point(371, 201);
+            this.Btn_FEntrega.Location = new System.Drawing.Point(377, 203);
             this.Btn_FEntrega.Name = "Btn_FEntrega";
             this.Btn_FEntrega.Size = new System.Drawing.Size(209, 42);
             this.Btn_FEntrega.TabIndex = 14;
@@ -159,7 +159,7 @@
             // 
             // Txt_FEntrega
             // 
-            this.Txt_FEntrega.Location = new System.Drawing.Point(590, 207);
+            this.Txt_FEntrega.Location = new System.Drawing.Point(592, 207);
             this.Txt_FEntrega.Name = "Txt_FEntrega";
             this.Txt_FEntrega.Size = new System.Drawing.Size(186, 31);
             this.Txt_FEntrega.TabIndex = 15;
