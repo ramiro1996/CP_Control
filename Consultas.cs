@@ -50,10 +50,17 @@ namespace CP_Control
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
 
-        public void Set_InsertaCliente(string cliente, string RFC, string direccion, string ciudad, string cp, string correo, string contacto, string telContacto) 
+        public int Set_InsertaCliente(ClienteViewModel model) 
         {
-            string consulta = "EXEC CP_Clientes_InsertaClientes @CP_IdCliente = 0, @CP_Nombre ='"+cliente+"', @CP_RFC='"+RFC+"',@CP_Direccion='"+direccion+"' ,@CP_Ciudad ='"+ciudad+"', @CP_CP ='"+cp+"', @CP_Nombre_contacto ='"+contacto+"',@CP_Correo ='"+correo+"', @CP_IdRegistro =1, @CP_TelContacto ='"+telContacto+"'";
-            MBD.InsertaModificaBD(consulta);
+            string consulta = "EXEC CP_Clientes_InsertaClientes @CP_IdCliente = "+model.IdCiente+", @CP_Nombre ='"+model.Cliente+"', @CP_RFC='"+model.RFCCli+"',@CP_Direccion='"+model.DirClien+"' ,@CP_Ciudad ='"+model.CiudClien+"', @CP_CP ='"+model.CPClien+"', @CP_Nombre_contacto ='"+model.ContaClnt+"',@CP_Correo ='"+model.CorreoC+"', @CP_IdRegistro = 1, @CP_TelContacto ='"+model.TelConClient+"'";
+           var mov = MBD.ConsultaEscalarBD(consulta);
+            return Convert.ToInt32(mov);
+        }
+        public int Set_EliminaCliente(int IdClnt) 
+        {
+            string consulta = "EXEC CP_Clientes_EliminaClientes @CP_IdCliente ="+IdClnt;
+            var mov = MBD.ConsultaEscalarBD(consulta);
+            return Convert.ToInt32(mov);
         }
         #endregion
 

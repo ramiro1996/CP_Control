@@ -38,5 +38,16 @@ namespace CP_Control.CP_Control.Modelos
         public string FInicio { get; set; }
         public string FEntrega { get; set; }
     }
-
+    public class ClienteViewModel
+    {
+        public int IdCiente { get; set; }
+        public string Cliente { get; set; }
+        public string RFCCli {  get; set; }
+        public string DirClien { get; set; }
+        public string CiudClien { get; set; }
+        public string CPClien { get; set; }
+        public string CorreoC { get; set; }
+        public string ContaClnt { get; set; }
+        public string TelConClient {  get; set; }
+    }
 }

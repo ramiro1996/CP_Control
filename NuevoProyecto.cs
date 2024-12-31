@@ -114,8 +114,19 @@ namespace CP_Control.CP_Control
             Txt_Proyecto.Text = NombreProy;
             Txt_Direccion.Text = DirProy;
             Txt_Codigo.Text = CodProy;
-            Txt_FRegistro.Text = FechInicio;
-            Txt_FEntrega.Text = FechEntrega;
+            if (DateTime.TryParse(FechInicio, out DateTime fecha))
+            {
+                Txt_FRegistro.Text = fecha.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                Txt_FRegistro.Text = "Fecha inválida"; // Manejo en caso de error
+            }
+            if (DateTime.TryParse(FechEntrega, out DateTime fechaE))
+            {
+                Txt_FEntrega.Text = fechaE.ToString("yyyy-MM-dd");
+
+            }
             
             if (NombreCliente != null)
             {

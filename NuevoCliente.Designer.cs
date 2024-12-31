@@ -45,6 +45,8 @@
             this.Txt_TelContactoCliente = new System.Windows.Forms.TextBox();
             this.L_CorreoCliente = new System.Windows.Forms.Label();
             this.Txt_CorreoCliente = new System.Windows.Forms.TextBox();
+            this.L_IdCl = new System.Windows.Forms.Label();
+            this.Txt_IdClte = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Btn_GuardarCliente
@@ -185,11 +187,32 @@
             this.Txt_CorreoCliente.Size = new System.Drawing.Size(557, 31);
             this.Txt_CorreoCliente.TabIndex = 16;
             // 
+            // L_IdCl
+            // 
+            this.L_IdCl.AutoSize = true;
+            this.L_IdCl.Location = new System.Drawing.Point(30, 301);
+            this.L_IdCl.Name = "L_IdCl";
+            this.L_IdCl.Size = new System.Drawing.Size(96, 25);
+            this.L_IdCl.TabIndex = 17;
+            this.L_IdCl.Text = "IdCliente";
+            this.L_IdCl.Visible = false;
+            // 
+            // Txt_IdClte
+            // 
+            this.Txt_IdClte.Location = new System.Drawing.Point(129, 301);
+            this.Txt_IdClte.Name = "Txt_IdClte";
+            this.Txt_IdClte.Size = new System.Drawing.Size(100, 31);
+            this.Txt_IdClte.TabIndex = 18;
+            this.Txt_IdClte.Visible = false;
+            // 
             // NuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1018, 395);
+            this.Controls.Add(this.Txt_IdClte);
+            this.Controls.Add(this.L_IdCl);
             this.Controls.Add(this.Txt_CorreoCliente);
             this.Controls.Add(this.L_CorreoCliente);
             this.Controls.Add(this.Txt_TelContactoCliente);
@@ -209,6 +232,7 @@
             this.Controls.Add(this.Btn_GuardarCliente);
             this.Name = "NuevoCliente";
             this.Text = "Nuevo Cliente";
+            this.Load += new System.EventHandler(this.NuevoCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +257,7 @@
         private System.Windows.Forms.TextBox Txt_TelContactoCliente;
         private System.Windows.Forms.Label L_CorreoCliente;
         private System.Windows.Forms.TextBox Txt_CorreoCliente;
+        private System.Windows.Forms.Label L_IdCl;
+        private System.Windows.Forms.TextBox Txt_IdClte;
     }
 }
