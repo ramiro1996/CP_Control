@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CP_Control.CP_Control.Modelos;
 
 namespace CP_Control
 {
@@ -14,6 +15,20 @@ namespace CP_Control
     {
         public event EventHandler TrabajadorInsertado;
         Consultas Cta = new Consultas();
+
+        public int IdTra { get; set; }
+        public string nomTra { get; set; }
+        public string apPat { get; set; }
+        public string apMat { get; set; }
+        public string puestoTra { get; set; }
+        public string nivelTra { get; set; }
+        public decimal sueldoTra { get; set; }
+        public string usuarioTra { get; set; }
+        public string passTra { get; set; }
+        public int telTra { get; set; }
+        public string direcTra { get; set; }
+        public string correoTra { get; set; }
+
         public NuevoTrabajador()
         {
             InitializeComponent();
@@ -46,7 +61,8 @@ namespace CP_Control
 
         private void Btn_GuardarT_Click(object sender, EventArgs e)
         {
-            string nombreT = Txt_NombreT.Text.Trim().ToUpper();
+            int IdTrab = Convert.ToInt32(Txt_IdTrabajador.Text.Trim());
+            string nombreTra = Txt_NombreT.Text.Trim().ToUpper();
             string apePat = Txt_ApellidoPT.Text.Trim().ToUpper();
             string apeMat = Txt_ApellidoMT.Text.Trim().ToUpper();
             int puesto = Convert.ToInt32(D_Puesto.SelectedValue);
@@ -58,9 +74,28 @@ namespace CP_Control
             string direccion = Txt_DireccionT.Text.Trim().ToUpper();
             string correo = Txt_CorreoT.Text.Trim();
             
-            if (nombreT != "" || apePat !="") 
+            if (nombreTra != "" || apePat !="") 
             {
-                Cta.Set_InsertaTrabajador(nombreT,apePat,apeMat,puesto,nivel,usuario,passUsr,tel,direccion,correo,sueldo);    
+                if (string.IsNullOrEmpty(Txt_IdTrabajador.Text))
+                {
+                    IdTrab = 0;
+                }
+                var nvoTrab = new TrabajadoresViewModel { 
+                
+                    IdT =IdTrab,
+                    nombreT = nombreTra,
+                    aPaternoT = apePat,
+                    aMaternoT = apeMat,
+                    puestoT = puesto,
+                    nivelT = nivel,
+                    sueldoT = sueldo,
+                    usuarioT =usuario,
+                    pswT = passUsr,
+                    telT = tel,
+                    direcT = direccion,
+                    emailT = correo
+                };
+                 var accion = Cta.Set_InsertaTrabajador(nvoTrab);    
                 TrabajadorInsertado?.Invoke(sender, EventArgs.Empty);
                 this.Close();
                 MessageBox.Show("Trabajador registrado con éxito.");
@@ -82,6 +117,22 @@ namespace CP_Control
                 Txt_TelT.ForeColor = Color.White;
                 MessageBox.Show("El campo solo acepta valores numericos y sin espacios.");
             }
+        }
+
+        private void NuevoTrabajador_Load(object sender, EventArgs e)
+        {
+            Txt_IdTrabajador.Text = IdTra.ToString();
+            Txt_NombreT.Text = nomTra;
+            Txt_ApellidoPT.Text = apPat;
+            Txt_ApellidoMT.Text = apMat;
+            D_Puesto.Text = puestoTra;
+            D_Nivel.Text = nivelTra;
+            Txt_SueldoT.Text = sueldoTra.ToString();
+            Txt_UsuarioT.Text = usuarioTra;
+            Txt_PassT.Text = passTra;
+            Txt_TelT.Text = telTra.ToString();
+            Txt_DireccionT.Text = direcTra;
+            Txt_CorreoT.Text = correoTra;
         }
     }
 }

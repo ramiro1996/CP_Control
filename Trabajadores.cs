@@ -18,6 +18,8 @@ namespace CP_Control
             InitializeComponent();
             Get_Trabajadores();
         }
+        private bool Btn_ModificaEmp;
+        private bool Btn_EliminaEmp;
 
         private void Get_Trabajadores()
         {
@@ -32,6 +34,22 @@ namespace CP_Control
             G_Trabajadores.Columns["Usuario"].DataPropertyName="Usuario";
             G_Trabajadores.Columns["Sueldo"].DataPropertyName = "Sueldo";
             G_Trabajadores.Columns["Status"].DataPropertyName = "Status";
+            G_Trabajadores.Columns["Psw"].DataPropertyName = "Psw";
+            G_Trabajadores.Columns["Telefono"].DataPropertyName = "Telefono";
+            G_Trabajadores.Columns["Direccion"].DataPropertyName = "Direccion";
+            G_Trabajadores.Columns["Correo"].DataPropertyName = "Correo";
+
+            if (!Btn_ModificaEmp) 
+            {
+                DataGridViewButtonColumn Btn_ModificaTrab = new DataGridViewButtonColumn();
+                Btn_ModificaTrab.Name = "Btn_ModificaE";
+                Btn_ModificaTrab.HeaderText = "Editar";
+                Btn_ModificaTrab.Text = "Editar";
+                Btn_ModificaTrab.UseColumnTextForButtonValue = true;
+                G_Trabajadores.Columns.Add(Btn_ModificaTrab);
+                G_Trabajadores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                Btn_ModificaEmp = true;
+            }
 
             if (dt.Rows.Count > 0)
             {
@@ -45,16 +63,48 @@ namespace CP_Control
 
         private void G_Trabajadores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            int idEmp = Convert.ToInt32(G_Trabajadores.Rows[e.RowIndex].Cells[0].Value.ToString());
+            string nomEmp = G_Trabajadores.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string apPaterno = G_Trabajadores.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string apMaterno = G_Trabajadores.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string puestoT = G_Trabajadores.Rows[e.RowIndex].Cells[4].Value.ToString();
+            string nivelT = G_Trabajadores.Rows[e.RowIndex].Cells[5].Value.ToString();
+            string usrT = G_Trabajadores.Rows[e.RowIndex].Cells[6].Value.ToString();
+            decimal sueldoTr = Convert.ToDecimal(G_Trabajadores.Rows[e.RowIndex].Cells[7].Value);
+            string pswT = G_Trabajadores.Rows[e.RowIndex].Cells[9].Value.ToString();
+            int telT = Convert.ToInt32(G_Trabajadores.Rows[e.RowIndex ].Cells[10].Value);
+            string direccT = G_Trabajadores.Rows[e.RowIndex].Cells[11].Value.ToString();
+            string correoT = G_Trabajadores.Rows[e.RowIndex].Cells[12].Value.ToString();
 
+            if (e.RowIndex >= 0 && G_Trabajadores.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                if (G_Trabajadores.Columns[e.ColumnIndex].Name=="Btn_ModificaE")
+                {
+                    var modTrabajador = new NuevoTrabajador
+                    {
+                        IdTra = idEmp,
+                        nomTra = nomEmp,
+                        apPat = apPaterno,
+                        apMat = apMaterno,
+                        puestoTra = puestoT,
+                        sueldoTra = sueldoTr,
+                        nivelTra = nivelT,
+                        usuarioTra = usrT,
+                        passTra = pswT,
+                        telTra = telT,
+                        direcTra = direccT,
+                        correoTra = correoT                        
+                    };
+                    modTrabajador.TrabajadorInsertado += (s, args) => Get_Trabajadores();
+                    modTrabajador.Show();
+                }
+            }
         }
 
         private void Btn_Trabajadores_Click(object sender, EventArgs e)
         {
             var nuevoTrabajadorForm = new NuevoTrabajador();
-
             nuevoTrabajadorForm.TrabajadorInsertado += (s, args) => Get_Trabajadores();
-
             nuevoTrabajadorForm.Show();
         }
     }

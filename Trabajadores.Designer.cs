@@ -40,6 +40,10 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Psw = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.G_Trabajadores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +72,11 @@
             this.Nivel,
             this.Usuario,
             this.Sueldo,
-            this.Status});
+            this.Status,
+            this.Psw,
+            this.Telefono,
+            this.Direccion,
+            this.Correo});
             this.G_Trabajadores.Location = new System.Drawing.Point(48, 117);
             this.G_Trabajadores.Name = "G_Trabajadores";
             this.G_Trabajadores.RowHeadersWidth = 82;
@@ -148,6 +156,35 @@
             this.Status.HeaderText = "Status";
             this.Status.MinimumWidth = 10;
             this.Status.Name = "Status";
+            this.Status.Width = 200;
+            // 
+            // Psw
+            // 
+            this.Psw.HeaderText = "Contraseña";
+            this.Psw.MinimumWidth = 10;
+            this.Psw.Name = "Psw";
+            this.Psw.Width = 200;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 10;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Width = 200;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.MinimumWidth = 10;
+            this.Direccion.Name = "Direccion";
+            this.Direccion.Width = 200;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.MinimumWidth = 10;
+            this.Correo.Name = "Correo";
+            this.Correo.Width = 200;
             // 
             // Trabajadores
             // 
@@ -179,5 +216,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Psw;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
     }
 }

@@ -52,6 +52,8 @@
             this.L_CorreoT = new System.Windows.Forms.Label();
             this.Txt_DireccionT = new System.Windows.Forms.TextBox();
             this.Txt_CorreoT = new System.Windows.Forms.TextBox();
+            this.L_IdTrabajador = new System.Windows.Forms.Label();
+            this.Txt_IdTrabajador = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // L_NombreT
@@ -244,11 +246,29 @@
             this.Txt_CorreoT.Size = new System.Drawing.Size(267, 31);
             this.Txt_CorreoT.TabIndex = 22;
             // 
+            // L_IdTrabajador
+            // 
+            this.L_IdTrabajador.AutoSize = true;
+            this.L_IdTrabajador.Location = new System.Drawing.Point(17, 247);
+            this.L_IdTrabajador.Name = "L_IdTrabajador";
+            this.L_IdTrabajador.Size = new System.Drawing.Size(133, 25);
+            this.L_IdTrabajador.TabIndex = 23;
+            this.L_IdTrabajador.Text = "IdTrabajador";
+            // 
+            // Txt_IdTrabajador
+            // 
+            this.Txt_IdTrabajador.Location = new System.Drawing.Point(156, 244);
+            this.Txt_IdTrabajador.Name = "Txt_IdTrabajador";
+            this.Txt_IdTrabajador.Size = new System.Drawing.Size(100, 31);
+            this.Txt_IdTrabajador.TabIndex = 24;
+            // 
             // NuevoTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 299);
+            this.Controls.Add(this.Txt_IdTrabajador);
+            this.Controls.Add(this.L_IdTrabajador);
             this.Controls.Add(this.Txt_CorreoT);
             this.Controls.Add(this.Txt_DireccionT);
             this.Controls.Add(this.L_CorreoT);
@@ -274,6 +294,7 @@
             this.Controls.Add(this.L_NombreT);
             this.Name = "NuevoTrabajador";
             this.Text = "Nuevo trabajador";
+            this.Load += new System.EventHandler(this.NuevoTrabajador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +326,7 @@
         private System.Windows.Forms.Label L_CorreoT;
         private System.Windows.Forms.TextBox Txt_DireccionT;
         private System.Windows.Forms.TextBox Txt_CorreoT;
+        private System.Windows.Forms.Label L_IdTrabajador;
+        private System.Windows.Forms.TextBox Txt_IdTrabajador;
     }
 }

@@ -50,4 +50,20 @@ namespace CP_Control.CP_Control.Modelos
         public string ContaClnt { get; set; }
         public string TelConClient {  get; set; }
     }
+    public class TrabajadoresViewModel
+    {
+        public int IdT { get; set; }
+        public string nombreT { get; set; }
+        public string aPaternoT { get; set; }
+        public string aMaternoT { get; set; }
+        public int puestoT { get; set; }
+        public int nivelT { get; set; }
+        public decimal sueldoT { get; set; }
+        public string usuarioT { get; set; }
+        public string pswT { get; set; }
+        public int telT { get; set; }
+        public string direcT { get; set; }
+        public string emailT { get; set; }
+    }
+
 }

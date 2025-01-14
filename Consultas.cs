@@ -80,10 +80,12 @@ namespace CP_Control
             string consulta = "SELECT ID, Nivel FROM CP_Nivel";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
-        public void Set_InsertaTrabajador(string Trabajador, string Ap_Paterno, string Ap_Materno, int puesto, int nivel, string usr,string pass, int tel, string direccion, string correo, decimal sueldo)
+        public int Set_InsertaTrabajador(TrabajadoresViewModel model)
         {
-            string consulta = "EXEC CP_Usuarios_UsuariosInserta @LC_Nombre = '"+Trabajador+"', @LC_Ap_Paterno ='"+Ap_Paterno+"', @LC_Ap_Materno ='"+Ap_Materno+"', @LC_Puesto ="+puesto+", @LC_Nivel ="+nivel+", @LC_Usuario ='"+usr+"', @LC_Password   ='"+pass+"', @LC_Telefono   ="+tel+",@LC_Direccion  ='"+direccion+"', @LC_Correo = '"+correo+"', @LC_Sueldo ="+sueldo+",@Lc_IdUsuariO  = 0  ";
-             MBD.InsertaModificaBD(consulta);
+            string consulta = "EXEC CP_Usuarios_UsuariosInserta @CP_Nombre = '"+model.nombreT+"', @CP_Ap_Paterno ='"+model.aPaternoT+"', @CP_Ap_Materno ='"+model.aMaternoT+"', @CP_Puesto ="+model.puestoT+", @CP_Nivel ="+model.nivelT+", @CP_Usuario ='"+model.usuarioT+"', @CP_Password   ='"+model.pswT+"', @CP_Telefono   ="+model.telT+",@CP_Direccion  ='"+model.direcT+"', @CP_Correo = '"+model.emailT+"', @CP_Sueldo ="+model.sueldoT+",@CP_IdUsuariO  = "+model.IdT;
+             
+            var res = MBD.ConsultaEscalarBD(consulta);
+            return Convert.ToInt32(res);
         }
         #endregion
 
