@@ -40,10 +40,12 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Psw = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Txt_BuscaEmp = new System.Windows.Forms.TextBox();
+            this.L_BuscaEmp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.G_Trabajadores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             this.Usuario,
             this.Sueldo,
             this.Status,
-            this.Psw,
+            this.Password,
             this.Telefono,
             this.Direccion,
             this.Correo});
@@ -158,12 +160,12 @@
             this.Status.Name = "Status";
             this.Status.Width = 200;
             // 
-            // Psw
+            // Password
             // 
-            this.Psw.HeaderText = "Contraseña";
-            this.Psw.MinimumWidth = 10;
-            this.Psw.Name = "Psw";
-            this.Psw.Width = 200;
+            this.Password.HeaderText = "Contraseña";
+            this.Password.MinimumWidth = 10;
+            this.Password.Name = "Password";
+            this.Password.Width = 200;
             // 
             // Telefono
             // 
@@ -186,11 +188,33 @@
             this.Correo.Name = "Correo";
             this.Correo.Width = 200;
             // 
+            // Txt_BuscaEmp
+            // 
+            this.Txt_BuscaEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_BuscaEmp.Location = new System.Drawing.Point(889, 51);
+            this.Txt_BuscaEmp.Name = "Txt_BuscaEmp";
+            this.Txt_BuscaEmp.Size = new System.Drawing.Size(206, 31);
+            this.Txt_BuscaEmp.TabIndex = 3;
+            this.Txt_BuscaEmp.TextChanged += new System.EventHandler(this.Txt_BuscaEmp_TextChanged);
+            // 
+            // L_BuscaEmp
+            // 
+            this.L_BuscaEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.L_BuscaEmp.AutoSize = true;
+            this.L_BuscaEmp.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.L_BuscaEmp.Location = new System.Drawing.Point(781, 51);
+            this.L_BuscaEmp.Name = "L_BuscaEmp";
+            this.L_BuscaEmp.Size = new System.Drawing.Size(79, 25);
+            this.L_BuscaEmp.TabIndex = 4;
+            this.L_BuscaEmp.Text = "Buscar";
+            // 
             // Trabajadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 808);
+            this.Controls.Add(this.L_BuscaEmp);
+            this.Controls.Add(this.Txt_BuscaEmp);
             this.Controls.Add(this.Btn_Cerrar);
             this.Controls.Add(this.G_Trabajadores);
             this.Controls.Add(this.Btn_Trabajadores);
@@ -199,6 +223,7 @@
             this.Text = "Trabajadores";
             ((System.ComponentModel.ISupportInitialize)(this.G_Trabajadores)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -216,9 +241,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Psw;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.TextBox Txt_BuscaEmp;
+        private System.Windows.Forms.Label L_BuscaEmp;
     }
 }

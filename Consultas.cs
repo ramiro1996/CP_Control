@@ -87,6 +87,12 @@ namespace CP_Control
             var res = MBD.ConsultaEscalarBD(consulta);
             return Convert.ToInt32(res);
         }
+        public int Set_EliminaUsuario(int IdUsr)
+        {
+            string consulta = "EXEC CP_Usuarios_EliminaUsuarios @IdUsuario = " + IdUsr;
+            var res = MBD.ConsultaEscalarBD(consulta);
+            return Convert.ToInt32(res);
+        }
         #endregion
 
         #region Productos

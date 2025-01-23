@@ -254,6 +254,7 @@
             this.L_IdTrabajador.Size = new System.Drawing.Size(133, 25);
             this.L_IdTrabajador.TabIndex = 23;
             this.L_IdTrabajador.Text = "IdTrabajador";
+            this.L_IdTrabajador.Visible = false;
             // 
             // Txt_IdTrabajador
             // 
@@ -261,6 +262,7 @@
             this.Txt_IdTrabajador.Name = "Txt_IdTrabajador";
             this.Txt_IdTrabajador.Size = new System.Drawing.Size(100, 31);
             this.Txt_IdTrabajador.TabIndex = 24;
+            this.Txt_IdTrabajador.Visible = false;
             // 
             // NuevoTrabajador
             // 

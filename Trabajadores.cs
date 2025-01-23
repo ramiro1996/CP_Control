@@ -34,7 +34,7 @@ namespace CP_Control
             G_Trabajadores.Columns["Usuario"].DataPropertyName="Usuario";
             G_Trabajadores.Columns["Sueldo"].DataPropertyName = "Sueldo";
             G_Trabajadores.Columns["Status"].DataPropertyName = "Status";
-            G_Trabajadores.Columns["Psw"].DataPropertyName = "Psw";
+            G_Trabajadores.Columns["Password"].DataPropertyName = "Password";
             G_Trabajadores.Columns["Telefono"].DataPropertyName = "Telefono";
             G_Trabajadores.Columns["Direccion"].DataPropertyName = "Direccion";
             G_Trabajadores.Columns["Correo"].DataPropertyName = "Correo";
@@ -49,6 +49,17 @@ namespace CP_Control
                 G_Trabajadores.Columns.Add(Btn_ModificaTrab);
                 G_Trabajadores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 Btn_ModificaEmp = true;
+            }
+            if (!Btn_EliminaEmp)
+            {
+                DataGridViewButtonColumn Btn_EliminaTrab = new DataGridViewButtonColumn();
+                Btn_EliminaTrab.Name = "Btn_EliminaE";
+                Btn_EliminaTrab.HeaderText = "Eliminar";
+                Btn_EliminaTrab.Text = "Eliminar";
+                Btn_EliminaTrab.UseColumnTextForButtonValue = true;
+                G_Trabajadores.Columns.Add(Btn_EliminaTrab);
+                G_Trabajadores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                Btn_EliminaEmp = true;
             }
 
             if (dt.Rows.Count > 0)
@@ -98,6 +109,32 @@ namespace CP_Control
                     modTrabajador.TrabajadorInsertado += (s, args) => Get_Trabajadores();
                     modTrabajador.Show();
                 }
+                else if (G_Trabajadores.Columns[e.ColumnIndex].Name == "Btn_EliminaE")
+                {
+                    var opcion = MessageBox.Show("¿Estás seguro de que deseas continuar?",
+                                                  "Confirmación",
+                                                   MessageBoxButtons.YesNo,
+                                                   MessageBoxIcon.Question);
+                    if (opcion == DialogResult.Yes)
+                    {
+                        var accion = Cta.Set_EliminaUsuario(idEmp);
+
+                        if (accion == 1)
+                        {
+                            MessageBox.Show("Registro eliminado correctamente.");
+                            Get_Trabajadores();
+                        }
+                        else if (accion == 0)
+                        {
+                            MessageBox.Show("Ocurrio un error.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La acción ha sido cancelada.");
+                    }
+
+                }
             }
         }
 
@@ -106,6 +143,15 @@ namespace CP_Control
             var nuevoTrabajadorForm = new NuevoTrabajador();
             nuevoTrabajadorForm.TrabajadorInsertado += (s, args) => Get_Trabajadores();
             nuevoTrabajadorForm.Show();
+        }
+
+        private void Txt_BuscaEmp_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)G_Trabajadores.DataSource;
+            if (dt.Rows.Count > 0) 
+            {
+                dt.DefaultView.RowFilter = string.Format("Nombre like '%{0}%'",Txt_BuscaEmp.Text);
+            }
         }
     }
 }

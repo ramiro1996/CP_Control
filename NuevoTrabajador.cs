@@ -95,10 +95,20 @@ namespace CP_Control
                     direcT = direccion,
                     emailT = correo
                 };
-                 var accion = Cta.Set_InsertaTrabajador(nvoTrab);    
+                 var accion = Cta.Set_InsertaTrabajador(nvoTrab);
+                
                 TrabajadorInsertado?.Invoke(sender, EventArgs.Empty);
                 this.Close();
-                MessageBox.Show("Trabajador registrado con éxito.");
+
+                if (accion == 1)
+                {
+                    MessageBox.Show("Trabajador registrado con éxito.");
+                }
+                else if (accion == 0)
+                {
+                    MessageBox.Show("Trabajador modificado con éxito.");
+
+                }
             }
 
 
