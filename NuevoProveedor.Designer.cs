@@ -51,6 +51,8 @@
             this.Txt_CorreoP = new System.Windows.Forms.TextBox();
             this.L_TipoProv = new System.Windows.Forms.Label();
             this.D_TipoProv = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Txt_IdPrv = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // L_Proveedor
@@ -244,12 +246,30 @@
             this.D_TipoProv.Size = new System.Drawing.Size(329, 33);
             this.D_TipoProv.TabIndex = 22;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 25);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "IdPrv";
+            // 
+            // Txt_IdPrv
+            // 
+            this.Txt_IdPrv.Location = new System.Drawing.Point(128, 275);
+            this.Txt_IdPrv.Name = "Txt_IdPrv";
+            this.Txt_IdPrv.Size = new System.Drawing.Size(167, 31);
+            this.Txt_IdPrv.TabIndex = 24;
+            // 
             // NuevoProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1038, 351);
+            this.Controls.Add(this.Txt_IdPrv);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.D_TipoProv);
             this.Controls.Add(this.L_TipoProv);
             this.Controls.Add(this.Txt_CorreoP);
@@ -306,5 +326,7 @@
         private System.Windows.Forms.TextBox Txt_CorreoP;
         private System.Windows.Forms.Label L_TipoProv;
         private System.Windows.Forms.ComboBox D_TipoProv;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox Txt_IdPrv;
     }
 }

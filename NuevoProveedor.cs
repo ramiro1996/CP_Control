@@ -17,6 +17,20 @@ namespace CP_Control
     {
         public event  EventHandler ProveedorNuevo;
         Consultas Cta = new Consultas();    
+
+        public int IdPrv { get; set; }
+        public string NomPrv { get; set; }
+        public string RFCPrv { get; set; }  
+        public string DirecPrv { get; set; }
+        public string CiudadPrv { get; set; }
+        public string CPPrv { get; set; }   
+        public int TelPrv { get; set; }
+        public string ContPrv   { get; set; }
+        public string EmailPrv { get; set; }
+        public string CargContPrv { get; set; }
+        public string TelContPrv { get; set; } 
+        public string TipoPrv { get; set; }
+
         public NuevoProveedor()
         {
             InitializeComponent();
