@@ -51,7 +51,13 @@ namespace CP_Control
         
         private void NuevoProveedor_Load(object sender, EventArgs e)
         {
-
+            Txt_IdPrv.Text = IdPrv.ToString();
+            Txt_Proveedor.Text = NomPrv;
+            Txt_RFCP.Text = RFCPrv;
+            Txt_DireccionP.Text = DirecPrv;
+            Txt_CiudadP.Text = CiudadPrv;
+            Txt_CPP.Text = CPPrv;
+            Txt_TelProv.Text = TelPrv.ToString();
         }
 
         private void L_ContactoP_Click(object sender, EventArgs e)
@@ -66,6 +72,7 @@ namespace CP_Control
 
         private void Btn_GuardarP_Click(object sender, EventArgs e)
         {
+            int idP = Convert.ToInt32(Txt_IdPrv.Text);
             string Prov = Txt_Proveedor.Text.Trim();
             string RFC = Txt_RFCP.Text.Trim();
             string DireccionP = Txt_DireccionP.Text.Trim();
