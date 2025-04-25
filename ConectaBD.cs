@@ -14,7 +14,7 @@ namespace CP_Control
     {
         //CADENA DE CONEXION
         
-        private string connectionString = @"Server = AMTI00288-LAPTO; Carpitectura_Pizana; Integrated Security = True;";
+        private string connectionString = @"Server = LAPTOP-905179I3; Carpitectura_Pizana; Integrated Security = True;";
 
         //METODO PARA ABRIR LA CONEXION 
 

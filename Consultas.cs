@@ -1,4 +1,5 @@
-﻿using CP_Control.CP_Control;
+﻿
+using CP_Control.CP_Control;
 using CP_Control.CP_Control.Modelos;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace CP_Control
         #region Clientes
         public DataTable Consulta_Clientes()
         {
-            string consulta = "EXEC CP_Clientes_ConsultaClientes";
+            string consulta = "EXEC CP_Clientes_Sel";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
 
@@ -72,24 +73,30 @@ namespace CP_Control
         }
         public DataTable Get_Puesto() 
         {
-            string consulta = "SELECT ID, Area FROM CP_Grupo";
+            string consulta = "EXEC CP_Puesto_Sel";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
         public DataTable Get_Nivel()
         {
-            string consulta = "SELECT ID, Nivel FROM CP_Nivel";
+            string consulta = "EXEC CP_Nivel_Sel";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
         public int Set_InsertaTrabajador(TrabajadoresViewModel model)
         {
-            string consulta = "EXEC CP_Usuarios_UsuariosInserta @CP_Nombre = '"+model.nombreT+"', @CP_Ap_Paterno ='"+model.aPaternoT+"', @CP_Ap_Materno ='"+model.aMaternoT+"', @CP_Puesto ="+model.puestoT+", @CP_Nivel ="+model.nivelT+", @CP_Usuario ='"+model.usuarioT+"', @CP_Password   ='"+model.pswT+"', @CP_Telefono   ="+model.telT+",@CP_Direccion  ='"+model.direcT+"', @CP_Correo = '"+model.emailT+"', @CP_Sueldo ="+model.sueldoT+",@CP_IdUsuariO  = "+model.IdT;
+            string consulta = "EXEC CP_Usuarios_UsuariosInserta @CP_Nombre = '" + model.nombreT+"', @CP_Ap_Paterno ='"+model.aPaternoT+"', @CP_Ap_Materno ='"+model.aMaternoT+"', @CP_Puesto ="+model.puestoT+", @CP_Nivel ="+model.nivelT+", @CP_Usuario ='"+model.usuarioT+"', @CP_Password   ='"+model.pswT+"', @CP_Telefono   ="+model.telT+",@CP_Direccion  ='"+model.direcT+"', @CP_Correo = '"+model.emailT+"', @CP_Sueldo ="+model.sueldoT+",@CP_IdUsuariO  = "+model.IdT;
              
             var res = MBD.ConsultaEscalarBD(consulta);
             return Convert.ToInt32(res);
         }
         public int Set_EliminaUsuario(int IdUsr)
         {
-            string consulta = "EXEC CP_Usuarios_EliminaUsuarios @IdUsuario = " + IdUsr;
+            string consulta = "EXEC CP_Usuarios_EliminaUsuarios @CP_IdUsuario = " + IdUsr;
+            var res = MBD.ConsultaEscalarBD(consulta);
+            return Convert.ToInt32(res);
+        }
+        public int Set_ActivaRegistro(int idReg, string tipoReg)
+        {
+            string consulta = "EXEC CP_ActivaRegistros @CP_IdRegistro="+idReg+ ", @CP_TipoRegistro='"+tipoReg+"'";
             var res = MBD.ConsultaEscalarBD(consulta);
             return Convert.ToInt32(res);
         }

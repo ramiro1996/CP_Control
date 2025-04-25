@@ -12,7 +12,7 @@ namespace CP_Control.CP_Control
     {
         public ManejadorBDSQL()
         {
-           sqlconex = new SqlConnection(@"Data Source=AMTI00288-LAPTO; initial catalog=Carpitectura_Pizana; Integrated Security=true;");
+           sqlconex = new SqlConnection(@"Data Source=LAPTOP-905179I3; initial catalog=Carpitectura_Pizana; Integrated Security=true;");
         
         }
 

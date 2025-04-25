@@ -25,9 +25,10 @@ namespace CP_Control
         public decimal sueldoTra { get; set; }
         public string usuarioTra { get; set; }
         public string passTra { get; set; }
-        public int telTra { get; set; }
+        public string telTra { get; set; }
         public string direcTra { get; set; }
         public string correoTra { get; set; }
+        public bool estadoActivo {  get; set; }
 
         public NuevoTrabajador()
         {
@@ -70,7 +71,7 @@ namespace CP_Control
             decimal sueldo = Convert.ToDecimal(Txt_SueldoT.Text.Trim());
             string usuario = Txt_UsuarioT.Text.Trim().ToUpper();
             string passUsr = Txt_PassT.Text.Trim();
-            int tel = Convert.ToInt32(Txt_TelT.Text.Trim());
+            string tel = Txt_TelT.Text.Trim();
             string direccion = Txt_DireccionT.Text.Trim().ToUpper();
             string correo = Txt_CorreoT.Text.Trim();
             
@@ -114,20 +115,20 @@ namespace CP_Control
 
         }
 
-        private void Txt_TelT_TextChanged(object sender, EventArgs e)
-        {
-            if (int.TryParse(Txt_TelT.Text, out _))
-            {
-                Txt_TelT.BackColor = Color.White;
-                Txt_TelT.ForeColor = Color.Black;
-            }
-            else
-            {
-                Txt_TelT.BackColor = Color.LightCoral;
-                Txt_TelT.ForeColor = Color.White;
-                MessageBox.Show("El campo solo acepta valores numericos y sin espacios.");
-            }
-        }
+        //private void Txt_TelT_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (int.TryParse(Txt_TelT.Text, out _))
+        //    {
+        //        Txt_TelT.BackColor = Color.White;
+        //        Txt_TelT.ForeColor = Color.Black;
+        //    }
+        //    else
+        //    {
+        //        Txt_TelT.BackColor = Color.LightCoral;
+        //        Txt_TelT.ForeColor = Color.White;
+        //        MessageBox.Show("El campo solo acepta valores numericos y sin espacios.");
+        //    }
+        //}
 
         private void NuevoTrabajador_Load(object sender, EventArgs e)
         {
@@ -140,9 +141,63 @@ namespace CP_Control
             Txt_SueldoT.Text = sueldoTra.ToString();
             Txt_UsuarioT.Text = usuarioTra;
             Txt_PassT.Text = passTra;
-            Txt_TelT.Text = telTra.ToString();
+            Txt_TelT.Text = telTra;
             Txt_DireccionT.Text = direcTra;
             Txt_CorreoT.Text = correoTra;
+
+              if (string.IsNullOrEmpty(Txt_IdTrabajador.Text) || Txt_IdTrabajador.Text == "0")
+            {
+                // Nuevo registro
+                Btn_GuardarT.Visible = true;
+                Btn_ActivarT.Visible = false;
+            }
+            else
+            {
+                if (estadoActivo)
+                {
+                    // Registro activo → permitir edición
+                    Btn_GuardarT.Visible = true;
+                    Btn_ActivarT.Visible = false;
+                }
+                else
+                {
+                    // Registro inactivo → solo activar, no editar
+                    Btn_GuardarT.Visible = false;
+                    Btn_ActivarT.Visible = true;
+                }
+                if (!estadoActivo)
+                {
+                    Txt_NombreT.Enabled = false;
+                    Txt_ApellidoPT.Enabled = false;
+                    Txt_ApellidoMT.Enabled = false;
+                    D_Puesto.Enabled = false;
+                    D_Nivel.Enabled = false;
+                    Txt_SueldoT.Enabled = false;
+                    Txt_UsuarioT.Enabled = false;
+                    Txt_PassT.Enabled = false;
+                    Txt_TelT.Enabled = false;
+                    Txt_DireccionT.Enabled = false;
+                    Txt_CorreoT.Enabled = false;
+                }
+            }
+        }
+
+        private void Btn_ActivarT_Click(object sender, EventArgs e)
+        {
+            int idTrabajador = int.Parse(Txt_IdTrabajador.Text);
+            string tipoActiva = "T";
+            var resultado = Cta.Set_ActivaRegistro(idTrabajador, tipoActiva);
+
+            if (resultado == 1)
+            {
+                MessageBox.Show("Trabajador activado con éxito.");
+                TrabajadorInsertado?.Invoke(sender, EventArgs.Empty); // Para actualizar la vista anterior
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al activar el trabajador.");
+            }
         }
     }
 }

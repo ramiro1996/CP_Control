@@ -82,10 +82,13 @@ namespace CP_Control
             string nivelT = G_Trabajadores.Rows[e.RowIndex].Cells[5].Value.ToString();
             string usrT = G_Trabajadores.Rows[e.RowIndex].Cells[6].Value.ToString();
             decimal sueldoTr = Convert.ToDecimal(G_Trabajadores.Rows[e.RowIndex].Cells[7].Value);
+            string estadoTexto = G_Trabajadores.Rows[e.RowIndex].Cells[8].Value.ToString();
             string pswT = G_Trabajadores.Rows[e.RowIndex].Cells[9].Value.ToString();
-            int telT = Convert.ToInt32(G_Trabajadores.Rows[e.RowIndex ].Cells[10].Value);
+            string telT = G_Trabajadores.Rows[e.RowIndex].Cells[10].Value.ToString();
             string direccT = G_Trabajadores.Rows[e.RowIndex].Cells[11].Value.ToString();
             string correoT = G_Trabajadores.Rows[e.RowIndex].Cells[12].Value.ToString();
+
+            bool estaActivo = estadoTexto.Equals("ACTIVO", StringComparison.OrdinalIgnoreCase);
 
             if (e.RowIndex >= 0 && G_Trabajadores.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
@@ -104,7 +107,8 @@ namespace CP_Control
                         passTra = pswT,
                         telTra = telT,
                         direcTra = direccT,
-                        correoTra = correoT                        
+                        correoTra = correoT,
+                        estadoActivo = estaActivo
                     };
                     modTrabajador.TrabajadorInsertado += (s, args) => Get_Trabajadores();
                     modTrabajador.Show();
@@ -146,7 +150,7 @@ namespace CP_Control
         }
 
         private void Txt_BuscaEmp_TextChanged(object sender, EventArgs e)
-        {
+       {
             DataTable dt = (DataTable)G_Trabajadores.DataSource;
             if (dt.Rows.Count > 0) 
             {

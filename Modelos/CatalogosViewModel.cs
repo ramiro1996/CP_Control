@@ -61,9 +61,10 @@ namespace CP_Control.CP_Control.Modelos
         public decimal sueldoT { get; set; }
         public string usuarioT { get; set; }
         public string pswT { get; set; }
-        public int telT { get; set; }
+        public string telT { get; set; }
         public string direcT { get; set; }
         public string emailT { get; set; }
+        public bool estadoActivo { get; set; }
     }
 
 }
