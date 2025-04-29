@@ -37,6 +37,7 @@ namespace CP_Control.CP_Control.Modelos
         public string Codigo { get; set; }
         public string FInicio { get; set; }
         public string FEntrega { get; set; }
+        public int status { get; set; }
     }
     public class ClienteViewModel
     {

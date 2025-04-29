@@ -49,73 +49,82 @@
             // L_Proyecto
             // 
             this.L_Proyecto.AutoSize = true;
-            this.L_Proyecto.Location = new System.Drawing.Point(28, 45);
+            this.L_Proyecto.Location = new System.Drawing.Point(14, 23);
+            this.L_Proyecto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Proyecto.Name = "L_Proyecto";
-            this.L_Proyecto.Size = new System.Drawing.Size(97, 25);
+            this.L_Proyecto.Size = new System.Drawing.Size(49, 13);
             this.L_Proyecto.TabIndex = 0;
             this.L_Proyecto.Text = "Proyecto";
             // 
             // Txt_Proyecto
             // 
-            this.Txt_Proyecto.Location = new System.Drawing.Point(152, 39);
+            this.Txt_Proyecto.Location = new System.Drawing.Point(76, 20);
+            this.Txt_Proyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_Proyecto.Name = "Txt_Proyecto";
-            this.Txt_Proyecto.Size = new System.Drawing.Size(428, 31);
+            this.Txt_Proyecto.Size = new System.Drawing.Size(216, 20);
             this.Txt_Proyecto.TabIndex = 1;
             // 
             // L_Cliente
             // 
             this.L_Cliente.AutoSize = true;
-            this.L_Cliente.Location = new System.Drawing.Point(604, 42);
+            this.L_Cliente.Location = new System.Drawing.Point(302, 22);
+            this.L_Cliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Cliente.Name = "L_Cliente";
-            this.L_Cliente.Size = new System.Drawing.Size(74, 25);
+            this.L_Cliente.Size = new System.Drawing.Size(37, 13);
             this.L_Cliente.TabIndex = 2;
             this.L_Cliente.Text = "Ciente";
             // 
             // D_Cliente
             // 
             this.D_Cliente.FormattingEnabled = true;
-            this.D_Cliente.Location = new System.Drawing.Point(700, 37);
+            this.D_Cliente.Location = new System.Drawing.Point(350, 19);
+            this.D_Cliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.D_Cliente.Name = "D_Cliente";
-            this.D_Cliente.Size = new System.Drawing.Size(441, 33);
+            this.D_Cliente.Size = new System.Drawing.Size(222, 21);
             this.D_Cliente.TabIndex = 4;
             // 
             // L_Diereccion
             // 
             this.L_Diereccion.AutoSize = true;
-            this.L_Diereccion.Location = new System.Drawing.Point(28, 101);
+            this.L_Diereccion.Location = new System.Drawing.Point(14, 53);
+            this.L_Diereccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Diereccion.Name = "L_Diereccion";
-            this.L_Diereccion.Size = new System.Drawing.Size(102, 25);
+            this.L_Diereccion.Size = new System.Drawing.Size(52, 13);
             this.L_Diereccion.TabIndex = 5;
             this.L_Diereccion.Text = "Dirección";
             // 
             // Txt_Direccion
             // 
-            this.Txt_Direccion.Location = new System.Drawing.Point(152, 101);
+            this.Txt_Direccion.Location = new System.Drawing.Point(76, 53);
+            this.Txt_Direccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_Direccion.Name = "Txt_Direccion";
-            this.Txt_Direccion.Size = new System.Drawing.Size(989, 31);
+            this.Txt_Direccion.Size = new System.Drawing.Size(496, 20);
             this.Txt_Direccion.TabIndex = 6;
             // 
             // L_Codigo
             // 
             this.L_Codigo.AutoSize = true;
-            this.L_Codigo.Location = new System.Drawing.Point(28, 160);
+            this.L_Codigo.Location = new System.Drawing.Point(14, 83);
+            this.L_Codigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_Codigo.Name = "L_Codigo";
-            this.L_Codigo.Size = new System.Drawing.Size(80, 25);
+            this.L_Codigo.Size = new System.Drawing.Size(40, 13);
             this.L_Codigo.TabIndex = 7;
             this.L_Codigo.Text = "Código";
             // 
             // Txt_Codigo
             // 
-            this.Txt_Codigo.Location = new System.Drawing.Point(152, 154);
+            this.Txt_Codigo.Location = new System.Drawing.Point(76, 80);
+            this.Txt_Codigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_Codigo.Name = "Txt_Codigo";
-            this.Txt_Codigo.Size = new System.Drawing.Size(428, 31);
+            this.Txt_Codigo.Size = new System.Drawing.Size(216, 20);
             this.Txt_Codigo.TabIndex = 8;
             // 
             // Btn_GuardarProyecto
             // 
-            this.Btn_GuardarProyecto.Location = new System.Drawing.Point(991, 210);
+            this.Btn_GuardarProyecto.Location = new System.Drawing.Point(496, 109);
+            this.Btn_GuardarProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_GuardarProyecto.Name = "Btn_GuardarProyecto";
-            this.Btn_GuardarProyecto.Size = new System.Drawing.Size(150, 39);
+            this.Btn_GuardarProyecto.Size = new System.Drawing.Size(75, 20);
             this.Btn_GuardarProyecto.TabIndex = 9;
             this.Btn_GuardarProyecto.Text = "Guardar";
             this.Btn_GuardarProyecto.UseVisualStyleBackColor = true;
@@ -123,9 +132,10 @@
             // 
             // Btn_FInicio
             // 
-            this.Btn_FInicio.Location = new System.Drawing.Point(33, 205);
+            this.Btn_FInicio.Location = new System.Drawing.Point(16, 107);
+            this.Btn_FInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_FInicio.Name = "Btn_FInicio";
-            this.Btn_FInicio.Size = new System.Drawing.Size(163, 38);
+            this.Btn_FInicio.Size = new System.Drawing.Size(82, 20);
             this.Btn_FInicio.TabIndex = 10;
             this.Btn_FInicio.Text = "Fecha Inicio";
             this.Btn_FInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,14 +144,16 @@
             // 
             // Txt_FRegistro
             // 
-            this.Txt_FRegistro.Location = new System.Drawing.Point(206, 207);
+            this.Txt_FRegistro.Location = new System.Drawing.Point(103, 108);
+            this.Txt_FRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_FRegistro.Name = "Txt_FRegistro";
-            this.Txt_FRegistro.Size = new System.Drawing.Size(159, 31);
+            this.Txt_FRegistro.Size = new System.Drawing.Size(82, 20);
             this.Txt_FRegistro.TabIndex = 12;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(377, -16);
+            this.monthCalendar1.Location = new System.Drawing.Point(188, -8);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 13;
             this.monthCalendar1.Visible = false;
@@ -149,9 +161,10 @@
             // 
             // Btn_FEntrega
             // 
-            this.Btn_FEntrega.Location = new System.Drawing.Point(377, 203);
+            this.Btn_FEntrega.Location = new System.Drawing.Point(188, 106);
+            this.Btn_FEntrega.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_FEntrega.Name = "Btn_FEntrega";
-            this.Btn_FEntrega.Size = new System.Drawing.Size(209, 42);
+            this.Btn_FEntrega.Size = new System.Drawing.Size(104, 22);
             this.Btn_FEntrega.TabIndex = 14;
             this.Btn_FEntrega.Text = "Fecha Entrega";
             this.Btn_FEntrega.UseVisualStyleBackColor = true;
@@ -159,34 +172,38 @@
             // 
             // Txt_FEntrega
             // 
-            this.Txt_FEntrega.Location = new System.Drawing.Point(592, 207);
+            this.Txt_FEntrega.Location = new System.Drawing.Point(296, 108);
+            this.Txt_FEntrega.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_FEntrega.Name = "Txt_FEntrega";
-            this.Txt_FEntrega.Size = new System.Drawing.Size(186, 31);
+            this.Txt_FEntrega.Size = new System.Drawing.Size(95, 20);
             this.Txt_FEntrega.TabIndex = 15;
             // 
             // L_IdProy
             // 
             this.L_IdProy.AutoSize = true;
-            this.L_IdProy.Location = new System.Drawing.Point(28, 259);
+            this.L_IdProy.Location = new System.Drawing.Point(14, 135);
+            this.L_IdProy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.L_IdProy.Name = "L_IdProy";
-            this.L_IdProy.Size = new System.Drawing.Size(114, 25);
+            this.L_IdProy.Size = new System.Drawing.Size(58, 13);
             this.L_IdProy.TabIndex = 16;
             this.L_IdProy.Text = "IdProyecto";
             this.L_IdProy.Visible = false;
             // 
             // Txt_IdProy
             // 
-            this.Txt_IdProy.Location = new System.Drawing.Point(152, 259);
+            this.Txt_IdProy.Location = new System.Drawing.Point(76, 135);
+            this.Txt_IdProy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Txt_IdProy.Name = "Txt_IdProy";
-            this.Txt_IdProy.Size = new System.Drawing.Size(105, 31);
+            this.Txt_IdProy.Size = new System.Drawing.Size(54, 20);
             this.Txt_IdProy.TabIndex = 17;
             this.Txt_IdProy.Visible = false;
             // 
             // NuevoProyecto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 320);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(588, 166);
             this.Controls.Add(this.Txt_IdProy);
             this.Controls.Add(this.L_IdProy);
             this.Controls.Add(this.Txt_FEntrega);
@@ -203,6 +220,7 @@
             this.Controls.Add(this.L_Cliente);
             this.Controls.Add(this.Txt_Proyecto);
             this.Controls.Add(this.L_Proyecto);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NuevoProyecto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo proyecto";

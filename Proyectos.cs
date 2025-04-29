@@ -35,7 +35,7 @@ namespace CP_Control.CP_Control
             DGV_Proyectos.Columns["Id"].DataPropertyName = "ID";
             DGV_Proyectos.Columns["Proyecto"].DataPropertyName = "Proyecto";
             DGV_Proyectos.Columns["Codigo"].DataPropertyName = "Codigo";
-            DGV_Proyectos.Columns["Id_Cliente"].DataPropertyName = "Id_Cliente";
+            DGV_Proyectos.Columns["Cliente"].DataPropertyName = "Cliente";
             DGV_Proyectos.Columns["Direccion"].DataPropertyName = "Direccion";
             DGV_Proyectos.Columns["FInicio"].DataPropertyName = "FInicio";
             DGV_Proyectos.Columns["FEntrega"].DataPropertyName = "FEntrega";
