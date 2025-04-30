@@ -88,6 +88,13 @@ namespace CP_Control.CP_Control
             string direc = DGV_Proyectos.Rows[e.RowIndex].Cells[4].Value.ToString();
             string FInic = DGV_Proyectos.Rows[e.RowIndex].Cells[5].Value.ToString();
             string FEntr = DGV_Proyectos.Rows[e.RowIndex].Cells[6].Value.ToString();
+            string estadoTexto = DGV_Proyectos.Rows[e.RowIndex].Cells[7].Value.ToString();
+            //int STProy = Convert.ToInt32(DGV_Proyectos.Rows[e.RowIndex].Cells[7].Value);
+
+            //bool estadoAct = estadoTexto.Equals("CREADO", StringComparison.OrdinalIgnoreCase);
+            var estadosVisibles = new List<string> { "CREADO", "PRESUPUESTADO", "RECHAZADO", "EN PROCESO", "ACEPTADO","TERMINADO" };
+            bool mostrarComboStatus = estadosVisibles
+                .Any(est => estadoTexto.Equals(est, StringComparison.OrdinalIgnoreCase));
 
             if (e.RowIndex >= 0 && DGV_Proyectos.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
@@ -101,7 +108,10 @@ namespace CP_Control.CP_Control
                     NombreCliente = Cliente,
                     DirProy = direc,
                     FechInicio = FInic,
-                    FechEntrega = FEntr
+                    FechEntrega = FEntr,
+                    estadoCreado = mostrarComboStatus,
+                    EstadoTex = estadoTexto
+                    //StatusProy = STProy
                     };
                     nuevoProy.ProyectoInsertado += (s, args) => Get_Proyectos();
                     nuevoProy.Show();

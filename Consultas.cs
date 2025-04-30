@@ -27,15 +27,19 @@ namespace CP_Control
         }
         public DataTable Set_CargaClientes()
         {
-            string consulta = "SELECT Id,Nombre FROM CP_CLIENTES";
+            string consulta = "SELECT cliente_Id, cliente_Nombre FROM Cliente";
             return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
         public int Set_InsertaNuevoProyecto(ProyectosViewModel model)
         {
+            string fInicioSql = string.IsNullOrWhiteSpace(model.FInicio) ? "NULL" : $"'{model.FInicio}'";
+            string fEntregaSql = string.IsNullOrWhiteSpace(model.FEntrega) ? "NULL" : $"'{model.FEntrega}'";
+
             string consulta = "EXEC CP_Proyectos_InsertaModifica @CP_idProyecto=" + model.IdProyecto + ", " +
-                "@CP_Proyecto='" + model.Proyecto + "',@CP_IdCliente=" + model.Cliente + ", " +
-                "@CP_Direccion='" + model.Direccion + "',@CP_Codigo='" + model.Codigo + "', " +
-                "@CP_FInicio    = '" + model.FInicio + "', @CP_FEntrega   = '" + model.FEntrega + "' ";
+                "@CP_Proyecto='" + model.Proyecto + "', @CP_IdCliente=" + model.Cliente + ", " +
+                "@CP_Direccion='" + model.Direccion + "', @CP_Codigo='" + model.Codigo + "', " +
+                "@CP_FInicio=" + fInicioSql + ", @CP_FEntrega=" + fEntregaSql + ", @CP_Status="+model.status;
+
             var res = MBD.ConsultaEscalarBD(consulta);
             return Convert.ToInt32(res);
         }
@@ -44,6 +48,11 @@ namespace CP_Control
             string consulta = "EXEC CP_Proyectos_EliminaProyecto @CP_IdProyecto = "+idProyecto;
             var res = MBD.ConsultaEscalarBD(consulta);
             return Convert.ToInt32(res);
+        }
+        public DataTable Get_parametrosGenerales(int plantilla, int tipo)
+        {
+            string consulta = "EXEC CP_parametrosGenerales_Sel  @CP_Plantilla ="+plantilla+"  ,@CP_Tipo ="+tipo;
+            return MBD.ConsultarTablaBD(consulta).Tables[0];
         }
         #endregion
 
@@ -56,7 +65,10 @@ namespace CP_Control
 
         public int Set_InsertaCliente(ClienteViewModel model) 
         {
-            string consulta = "EXEC CP_Clientes_InsertaClientes @CP_IdCliente = "+model.IdCiente+", @CP_Nombre ='"+model.Cliente+"', @CP_RFC='"+model.RFCCli+"',@CP_Direccion='"+model.DirClien+"' ,@CP_Ciudad ='"+model.CiudClien+"', @CP_CP ='"+model.CPClien+"', @CP_Nombre_contacto ='"+model.ContaClnt+"',@CP_Correo ='"+model.CorreoC+"', @CP_IdRegistro = 1, @CP_TelContacto ='"+model.TelConClient+"'";
+            string consulta = "EXEC CP_Clientes_InsertaClientes @CP_IdCliente = "+model.IdCiente+", @CP_Nombre ='"+model.Cliente+"', " +
+                "@CP_RFC='"+model.RFCCli+"',@CP_Direccion='"+model.DirClien+"' ,@CP_Ciudad ='"+model.CiudClien+"', " +
+                "@CP_CP ='"+model.CPClien+"', @CP_Nombre_contacto ='"+model.ContaClnt+"',@CP_Correo ='"+model.CorreoC+"'," +
+                " @CP_IdRegistro = 1, @CP_TelContacto ='"+model.TelConClient+"'";
            var mov = MBD.ConsultaEscalarBD(consulta);
             return Convert.ToInt32(mov);
         }

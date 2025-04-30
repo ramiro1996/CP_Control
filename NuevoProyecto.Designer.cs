@@ -44,6 +44,8 @@
             this.Txt_FEntrega = new System.Windows.Forms.TextBox();
             this.L_IdProy = new System.Windows.Forms.Label();
             this.Txt_IdProy = new System.Windows.Forms.TextBox();
+            this.D_Estado = new System.Windows.Forms.ComboBox();
+            this.L_EstadoP = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // L_Proyecto
@@ -152,7 +154,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(188, -8);
+            this.monthCalendar1.Location = new System.Drawing.Point(103, 135);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 13;
@@ -198,12 +200,33 @@
             this.Txt_IdProy.TabIndex = 17;
             this.Txt_IdProy.Visible = false;
             // 
+            // D_Estado
+            // 
+            this.D_Estado.FormattingEnabled = true;
+            this.D_Estado.Location = new System.Drawing.Point(350, 80);
+            this.D_Estado.Name = "D_Estado";
+            this.D_Estado.Size = new System.Drawing.Size(222, 21);
+            this.D_Estado.TabIndex = 18;
+            this.D_Estado.Visible = false;
+            // 
+            // L_EstadoP
+            // 
+            this.L_EstadoP.AutoSize = true;
+            this.L_EstadoP.Location = new System.Drawing.Point(305, 83);
+            this.L_EstadoP.Name = "L_EstadoP";
+            this.L_EstadoP.Size = new System.Drawing.Size(40, 13);
+            this.L_EstadoP.TabIndex = 19;
+            this.L_EstadoP.Text = "Estado";
+            this.L_EstadoP.Visible = false;
+            // 
             // NuevoProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(588, 166);
+            this.Controls.Add(this.L_EstadoP);
+            this.Controls.Add(this.D_Estado);
             this.Controls.Add(this.Txt_IdProy);
             this.Controls.Add(this.L_IdProy);
             this.Controls.Add(this.Txt_FEntrega);
@@ -248,5 +271,7 @@
         private System.Windows.Forms.TextBox Txt_FEntrega;
         private System.Windows.Forms.Label L_IdProy;
         private System.Windows.Forms.TextBox Txt_IdProy;
+        private System.Windows.Forms.ComboBox D_Estado;
+        private System.Windows.Forms.Label L_EstadoP;
     }
 }

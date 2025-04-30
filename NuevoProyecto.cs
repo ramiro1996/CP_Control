@@ -26,11 +26,15 @@ namespace CP_Control.CP_Control
         public string FechInicio { get; set; }
         public string FechEntrega { get; set; }
         public string NombreCliente { get; set; }
+        public bool estadoCreado { get; set; }
+        public string EstadoTex { get; set; }
+        public int StatusProy {  get; set; }
 
         public NuevoProyecto()
         {
             InitializeComponent();
             Set_Cliente();
+            Get_Status();
         }
         
 
@@ -39,15 +43,31 @@ namespace CP_Control.CP_Control
             DataTable dt = Cta.Set_CargaClientes();
             if (dt != null && dt.Rows.Count > 0)
             {
-                D_Cliente.DisplayMember = "Nombre";
-                D_Cliente.ValueMember = "Id";
+                D_Cliente.DisplayMember = "cliente_Nombre";
+                D_Cliente.ValueMember = "cliente_Id";
                 D_Cliente.DataSource = dt;
             }
             else
             {
-                MessageBox.Show("Datos no encontrados");
+                MessageBox.Show("Datos no encontrados.");
             }
 
+        }
+        public void Get_Status() 
+        {
+            int plantilla = 1;
+            int tipo = 1;
+            DataTable dt = Cta.Get_parametrosGenerales(plantilla, tipo);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                D_Estado.DisplayMember = "StatusProy_Descrip";
+                D_Estado.ValueMember = "StatusProy_Id";
+                D_Estado.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Datos no encontrados.");
+            }
         }
 
         private void Btn_GuardarProyecto_Click(object sender, EventArgs e)
@@ -59,12 +79,14 @@ namespace CP_Control.CP_Control
             string Codigo = Txt_Codigo.Text.Trim();
             string FInicio = Txt_FRegistro.Text.Trim();
             string FEntrega = Txt_FEntrega.Text.Trim();
+            int st = Convert.ToInt32(D_Estado.SelectedValue);
+
             if (string.IsNullOrEmpty(FInicio)) 
             {
-                FInicio = "0";
+                FInicio = "";
                 if (string.IsNullOrEmpty(FEntrega))
                 {
-                    FEntrega = "0";
+                    FEntrega = "";
                 }
             }
             
@@ -86,16 +108,17 @@ namespace CP_Control.CP_Control
                     Direccion = Direccion,
                     Codigo = Codigo,
                     FInicio = FInicio,
-                    FEntrega = FEntrega
+                    FEntrega = FEntrega,
+                    status = st
                 };
                 var resul = Cta.Set_InsertaNuevoProyecto(proyectoNuevo);
                 ProyectoInsertado?.Invoke(this, EventArgs.Empty);
                 this.Close();
-                if (resul == 2)
+                if (resul == 1)
                 {
                     MessageBox.Show("Registro guardado correctamente.");
                 }
-                else if (resul == 1)
+                else if (resul == 2)
                 {
                     MessageBox.Show("Registro modificado correctamente.");
                 }
@@ -118,10 +141,7 @@ namespace CP_Control.CP_Control
             {
                 Txt_FRegistro.Text = fecha.ToString("yyyy-MM-dd");
             }
-            else
-            {
-                Txt_FRegistro.Text = "Fecha inválida"; // Manejo en caso de error
-            }
+           
             if (DateTime.TryParse(FechEntrega, out DateTime fechaE))
             {
                 Txt_FEntrega.Text = fechaE.ToString("yyyy-MM-dd");
@@ -136,6 +156,26 @@ namespace CP_Control.CP_Control
             {
                 Set_Cliente();
             }
+            if (EstadoTex != null)
+            {
+                D_Estado.Text = EstadoTex.ToString();
+            }
+            else
+            {
+                Get_Status();
+            }
+            if (estadoCreado)
+            {
+
+                D_Estado.Visible = true;
+                L_EstadoP.Visible = true;
+            }
+            else
+            {
+                D_Estado.Visible = false;
+                L_EstadoP.Visible = false;
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
